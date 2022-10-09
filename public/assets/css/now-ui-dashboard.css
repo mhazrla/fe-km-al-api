@@ -1289,7 +1289,7 @@ fieldset[disabled] .btn-link.active {
 
 .btn-round {
     border-width: 1px;
-    border-radius: 30px;
+    border-radius: 10px;
     padding-right: 23px;
     padding-left: 23px;
 }
@@ -1329,7 +1329,7 @@ fieldset[disabled] .btn-link.active {
 .form-control {
     background-color: transparent;
     border: 1px solid #E3E3E3;
-    border-radius: 30px;
+    border-radius: 8px;
     color: #2c2c2c;
     line-height: normal;
     height: auto;
@@ -1746,9 +1746,7 @@ textarea.form-control {
     max-height: 80px;
     padding: 10px 10px 0 0;
     resize: none;
-    border: none;
-    border-bottom: 1px solid #E3E3E3;
-    border-radius: 0;
+    border-radius: 12px;
     line-height: 2;
 }
 
@@ -1912,6 +1910,7 @@ p.description {
 
 .title {
     font-weight: 700;
+    color: #7D1314;
 }
 
 .title.title-up {
@@ -4146,7 +4145,7 @@ Created using IcoMoon - icomoon.io
 .main-panel {
     position: relative;
     float: right;
-    width: calc(100% - 260px);
+    width: 100%;
     background-color: #E3E3E3;
     background-color: #ebecf1;
     transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -4180,12 +4179,10 @@ Created using IcoMoon - icomoon.io
 }
 
 .panel-header {
-    height: 260px;
-    padding-top: 80px;
-    padding-bottom: 45px;
-    background: #141E30;
+    min-height: 4rem;
+    margin-top: 6rem;
+
     /* fallback for old browsers */
-    background: linear-gradient(to right, #0c2646 0%, #204065 60%, #2a5788 100%);
     position: relative;
     overflow: hidden;
 }
@@ -4206,7 +4203,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .panel-header-sm {
-    height: 135px;
+    min-height: 3rem;
 }
 
 .panel-header-lg {
@@ -4568,11 +4565,12 @@ Created using IcoMoon - icomoon.io
 .card {
     border: 0;
     border-radius: 0.1875rem;
+    padding: 20px;
     display: inline-block;
     position: relative;
     width: 100%;
     margin-bottom: 20px;
-    box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.1);
+    box-shadow: 10px 10px 15px 10px rgba(39, 39, 39, 0.1);
 }
 
 .card [data-notify="container"].alert {
