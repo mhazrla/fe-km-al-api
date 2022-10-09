@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pers.home');
+        $response =  Http::get('http://km-al-api.test/api/pers');
+        if ($response->successful()) {
+            $pers = json_decode($response, true);
+            $pers = $pers['pers'];
+        }
+        return view('pers.home', ['pers' => $pers]);
     }
 
     public function create()
