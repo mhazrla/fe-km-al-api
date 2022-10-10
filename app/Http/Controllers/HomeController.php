@@ -31,7 +31,13 @@ class HomeController extends Controller
             $pers = json_decode($response, true);
             $pers = $pers['pers'];
         }
-        return view('pers.home', ['pers' => $pers]);
+        $title = null;
+        $titles =  Http::get('http://km-al-api.test/api/title');
+        if ($titles->successful()) {
+            $title = json_decode($titles, true);
+            $title = $title['data'];
+        }
+        return view('pers.home', ['pers' => $pers, 'titles' => $title]);
     }
 
     public function create()
