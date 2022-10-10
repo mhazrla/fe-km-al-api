@@ -6,10 +6,15 @@
 ])
 
 @section('content')
-    <div class="panel-header panel-header-lg">
-        <canvas id="bigDashboardChart"></canvas>
+    <div class="panel-header panel-header-sm container-fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <h5 class="title align-text-center">{{ __('Dashboard') }}</h5>
+            </div>
+
+        </div>
     </div>
-    <div class="content">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4">
                 <div class="card card-chart">
@@ -212,76 +217,24 @@
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            Niger
-                                        </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                        <td class="text-right">
-                                            $36,738
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
-                                        </td>
-                                        <td class="text-right">
-                                            $23,789
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                        <td class="text-right">
-                                            $56,142
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td class="text-right">
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td class="text-right">
-                                            $78,615
-                                        </td>
-                                    </tr>
+
+                                    {{-- Example API Call --}}
+                                    @forelse ($pers as $per)
+                                        <tr>
+                                            <td>{{ $per['nrp'] }}</td>
+                                            <td>{{ $per['nama'] }}</td>
+                                            <td>{{ $per['title']['title_name'] }}</td>
+                                            <td>
+                                                <a href="{{ route('edit', $per['per_id']) }}">Edit
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            Data masih kosong
+                                        </tr>
+                                    @endforelse
+
                                 </tbody>
                             </table>
                         </div>
