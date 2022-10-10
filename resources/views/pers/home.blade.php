@@ -6,10 +6,15 @@
 ])
 
 @section('content')
-    <div class="panel-header panel-header-lg">
-        <canvas id="bigDashboardChart"></canvas>
+    <div class="panel-header panel-header-sm container-fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <h5 class="title align-text-center">{{ __('Dashboard') }}</h5>
+            </div>
+
+        </div>
     </div>
-    <div class="content">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4">
                 <div class="card card-chart">
@@ -218,8 +223,11 @@
                                         <tr>
                                             <td>{{ $per['nrp'] }}</td>
                                             <td>{{ $per['nama'] }}</td>
-                                            <td>{{ $per['kd_title']['ket_title'] }}</td>
-                                            <td>Detail button</td>
+                                            <td>{{ $per['title']['title_name'] }}</td>
+                                            <td>
+                                                <a href="{{ route('edit', $per['per_id']) }}">Edit
+                                                </a>
+                                            </td>
                                         </tr>
                                     @empty
                                         <tr>

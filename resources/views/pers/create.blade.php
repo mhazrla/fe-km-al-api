@@ -29,44 +29,55 @@
             <div class="col-md-12">
                 <div class="card card-tasks">
                     <div class="card-header">
-                        <form method="post" action="{{ route('profile.update') }}" autocomplete="off"
-                            enctype="multipart/form-data">
+                        <form method="post" action="{{ route('store') }}" autocomplete="off" enctype="multipart/form-data">
                             @csrf
-                            @method('put')
                             @include('alerts.success')
                             <div class="row">
                                 <div class="col-md-6 ">
                                     <div class="form-group ">
                                         <label>{{ __(' Name') }}</label>
-                                        <input type="text" name="name" class="form-control"
-                                            value="{{ old('name', auth()->user()->name) }}">
-                                        @include('alerts.feedback', ['field' => 'name'])
+                                        <input type="text" name="nama" class="form-control" placeholder="Full Name"
+                                            value="{{ old('nama') }}">
+                                        @include('alerts.feedback', ['field' => 'nama'])
                                     </div>
                                 </div>
                                 <div class="col-md-6 ">
                                     <div class="form-group">
-                                        <label>{{ __(' Name') }}</label>
-                                        <input type="text" name="name" class="form-control"
-                                            value="{{ old('name', auth()->user()->name) }}">
-                                        @include('alerts.feedback', ['field' => 'name'])
+                                        <label>{{ __(' NRP') }}</label>
+                                        <input type="text" name="nrp" class="form-control" placeholder="NRP"
+                                            value="{{ old('nrp') }}">
+                                        @include('alerts.feedback', ['field' => 'nrp'])
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 ">
-                                    <div class="form-group ">
-                                        <label>{{ __(' Name') }}</label>
-                                        <input type="text" name="name" class="form-control"
-                                            value="{{ old('name', auth()->user()->name) }}">
-                                        @include('alerts.feedback', ['field' => 'name'])
+                                    <div class="form-group">
+                                        <label>{{ __(' Status') }}</label>
+                                        <select class="form-control" name="status_id">
+                                            <option selected disabled>Select Status</option>
+                                            @foreach ($statuses as $status)
+                                                <option value="{{ $status['status_id'] }}"
+                                                    @if ($status['status_id'] == old('status_id')) selected @endif>
+                                                    {{ $status['status_name'] }}</option>
+                                            @endforeach
+                                        </select>
+                                        @include('alerts.feedback', ['field' => 'status_id'])
                                     </div>
+
                                 </div>
                                 <div class="col-md-6 ">
                                     <div class="form-group">
-                                        <label>{{ __(' Name') }}</label>
-                                        <input type="text" name="name" class="form-control"
-                                            value="{{ old('name', auth()->user()->name) }}">
-                                        @include('alerts.feedback', ['field' => 'name'])
+                                        <label>{{ __(' Title') }}</label>
+                                        <select class="form-control" name="title_id">
+                                            <option selected disabled>Select Title</option>
+                                            @foreach ($titles as $title)
+                                                <option value="{{ $title['title_id'] }}"
+                                                    @if ($title['title_id'] == old('title_id')) selected @endif>
+                                                    {{ $title['title_name'] }}</option>
+                                            @endforeach
+                                        </select>
+                                        @include('alerts.feedback', ['field' => 'title_id'])
                                     </div>
                                 </div>
                             </div>
@@ -74,18 +85,18 @@
                             <div class="row">
                                 <div class="col-md-6 ">
                                     <div class="form-group ">
-                                        <label>{{ __(' Name') }}</label>
-                                        <input type="text" name="name" class="form-control"
-                                            value="{{ old('name', auth()->user()->name) }}">
-                                        @include('alerts.feedback', ['field' => 'name'])
+                                        <label>{{ __(' Place of Birth') }}</label>
+                                        <input type="text" name="tmp_lahir" class="form-control"
+                                            placeholder="Place of Birth" value="{{ old('tmp_lahir') }}">
+                                        @include('alerts.feedback', ['field' => 'tmp_lahir'])
                                     </div>
                                 </div>
                                 <div class="col-md-6 ">
-                                    <div class="form-group">
-                                        <label>{{ __(' Name') }}</label>
-                                        <input type="text" name="name" class="form-control"
-                                            value="{{ old('name', auth()->user()->name) }}">
-                                        @include('alerts.feedback', ['field' => 'name'])
+                                    <div class="form-group ">
+                                        <label>{{ __(' Date of Birth') }}</label>
+                                        <input type="date" name="tgl_lahir" class="form-control"
+                                            placeholder="Date of Birth" value="{{ old('tgl_lahir') }}">
+                                        @include('alerts.feedback', ['field' => 'tgl_lahir'])
                                     </div>
                                 </div>
                             </div>
@@ -93,10 +104,9 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group ">
-                                        <label>{{ __(' Name') }}</label>
-                                        <input type="text" name="name" class="form-control"
-                                            value="{{ old('name', auth()->user()->name) }}">
-                                        @include('alerts.feedback', ['field' => 'name'])
+                                        <label>{{ __(' Photo') }}</label>
+                                        <input type="file" name="foto" class="form-control">
+                                        @include('alerts.feedback', ['field' => 'foto'])
                                     </div>
                                 </div>
                             </div>
@@ -104,9 +114,9 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group ">
-                                        <label>{{ __(' Name') }}</label>
-                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px">{{ old('name', auth()->user()->name) }}</textarea>
-                                        @include('alerts.feedback', ['field' => 'name'])
+                                        <label>{{ __(' Address') }}</label>
+                                        <textarea class="form-control" placeholder="Full Address" name="alamat" style="height: 100px">{{ old('alamat') }}</textarea>
+                                        @include('alerts.feedback', ['field' => 'alamat'])
                                     </div>
                                 </div>
                             </div>
