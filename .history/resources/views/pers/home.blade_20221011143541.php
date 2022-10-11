@@ -55,7 +55,7 @@
                                 <td class="text-center"><img class="avatar border-gray" src="{{asset('assets')}}/img/default-avatar.png" alt="..."></td>
                                 <td>{{ $per['nrp'] }}</td>
                                 <td>{{ $per['nama'] }}</td>
-                                <td>{{ $per['title']['title_name'] }}</td>
+                                {{-- <td>{{ $per['title']['title_name'] }}</td> --}}
                                 <td class="td-actions text-center">
                                   <a href="{{ route('show', $per['per_id']) }}"><button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon">
                                       <i class="now-ui-icons users_single-02"></i>

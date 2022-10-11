@@ -17,7 +17,7 @@
 
     <div class="container">
         <div class="row">
-            @forelse ($titles as $title)
+            {{-- @forelse ($titles as $title)
             <div class="mb-2 col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
                 <div class="card" style="height: 8rem;">
                     <div class="card-body text-center">
@@ -28,7 +28,7 @@
             </div>
             @empty
             no datas
-            @endforelse
+            @endforelse --}}
         </div>
 
           <div class="col-md-12">
@@ -55,9 +55,9 @@
                                 <td class="text-center"><img class="avatar border-gray" src="{{asset('assets')}}/img/default-avatar.png" alt="..."></td>
                                 <td>{{ $per['nrp'] }}</td>
                                 <td>{{ $per['nama'] }}</td>
-                                <td>{{ $per['title']['title_name'] }}</td>
+                                {{-- <td>{{ $per['title']['title_name'] }}</td> --}}
                                 <td class="td-actions text-center">
-                                  <a href="{{ route('show', $per['per_id']) }}"><button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon">
+                                  <a href=""><button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon">
                                       <i class="now-ui-icons users_single-02"></i>
                                   </button></a>
                                   <a href="{{ route('edit', $per['per_id']) }}"><button type="button" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon">
@@ -80,5 +80,15 @@
         </div>
       </div>
 @endsection
+
+@push('js')
+    <script>
+        $(document).ready(function() {
+            // Javascript method's body can be found in assets/js/demos.js
+            demo.initDashboardPageCharts();
+
+        });
+    </script>
+@endpush
 
 

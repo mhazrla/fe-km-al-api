@@ -21,9 +21,9 @@
                     </li>
                 </ul>
             </div>
+
         </div>
     </div>
-
     <div class="container ">
         <div class="row">
             <div class="col-md-12">
@@ -56,16 +56,28 @@
                             <div class="row">
                                 <div class="col-md-6 ">
                                     <div class="form-group ">
-                                        <label>{{ __(' status') }}</label>
-                                        <input type="text" name="status" class="form-control" placeholder="NRP"
-                                            value="{{ $data['status']['status_name'] }}">
+                                        <label>{{ __(' Status') }}</label>
+                                        <select class="form-control" name="status_id">
+                                            @foreach ($statuses as $status)
+                                                <option value="{{ $status['status_id'] }}"
+                                                    @if ($status['status_id'] == $data['status']['status_id']) selected @endif>
+                                                    {{ $status['status_name'] }}</option>
+                                            @endforeach
+                                        </select>
                                         @include('alerts.feedback', ['field' => 'status_id'])
                                     </div>
                                 </div>
                                 <div class="col-md-6 ">
                                     <div class="form-group">
                                         <label>{{ __(' Title') }}</label>
-
+                                        <select class="form-control" name="title_id">
+                                            <option disabled>Select Title</option>
+                                            @foreach ($titles as $title)
+                                                <option value="{{ $title['title_id'] }}"
+                                                    @if ($title['title_id'] == $data['title']['title_id']) selected @endif>
+                                                    {{ $title['title_name'] }}</option>
+                                            @endforeach
+                                        </select>
                                         @include('alerts.feedback', ['field' => 'title_id'])
                                     </div>
                                 </div>

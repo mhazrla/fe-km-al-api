@@ -57,7 +57,7 @@
                                 <td>{{ $per['nama'] }}</td>
                                 <td>{{ $per['title']['title_name'] }}</td>
                                 <td class="td-actions text-center">
-                                  <a href="{{ route('show', $per['per_id']) }}"><button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon">
+                                  <a href=""><button type="button" rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon">
                                       <i class="now-ui-icons users_single-02"></i>
                                   </button></a>
                                   <a href="{{ route('edit', $per['per_id']) }}"><button type="button" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon">
@@ -80,5 +80,15 @@
         </div>
       </div>
 @endsection
+
+@push('js')
+    <script>
+        $(document).ready(function() {
+            // Javascript method's body can be found in assets/js/demos.js
+            demo.initDashboardPageCharts();
+
+        });
+    </script>
+@endpush
 
 

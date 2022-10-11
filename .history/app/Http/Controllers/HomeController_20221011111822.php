@@ -38,6 +38,7 @@ class HomeController extends Controller
             $title = $title['data'];
         }
 
+        dd($pers);
         return view('pers.home', ['pers' => $pers, 'titles' => $title]);
     }
 
@@ -94,7 +95,7 @@ class HomeController extends Controller
             }
         }
 
-        //dd( $per);
+        dd( $per);
         return view('pers.detail', ['data' => $per]);
     }
 

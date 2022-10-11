@@ -108,24 +108,11 @@ class HomeController extends Controller
             }
         }
 
-        $title = null;
-        $titles =  Http::get('http://km-al-api.test/api/title');
-        if ($titles->successful()) {
-            $title = json_decode($titles, true);
-            $title = $title['data'];
-        }
-
-        $status = null;
-        $statuses =  Http::get('http://km-al-api.test/api/status');
-        if ($statuses->successful()) {
-            $status = json_decode($statuses, true);
-            $status = $status['data'];
-        }
 
         // dd($status, $title, $per);
 
 
-        return view('pers.edit', ['data' => $per, 'titles' => $title, 'statuses' => $status]);
+        return view('pers.edit', ['data' => $per]);
     }
 
     public function update(Request $request)
