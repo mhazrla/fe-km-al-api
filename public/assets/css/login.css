@@ -16,7 +16,7 @@ body {
 }
 
 .invalid-feedback {
-   color: red;
+   color: #ECECEC;
    border-radius: 10px;
    margin: 10px 0;
    font-style: italic;
