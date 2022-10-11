@@ -41,29 +41,39 @@
                             <div class="card-body ">
                                 <div class="input-group no-border mb-3  form-control-lg">
                                     <div class="input-group">
-                                        <input type="email"name="email"
-                                            class="form-control  bg-input-login {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                        <input type="email" name="email" id="email"
+                                            class="form-control bg-input-login {{ $errors->has('email') ? ' is-invalid' : '' }}"
                                             placeholder="{{ __('EMAIL') }}" value="{{ old('email', 'admin@nowui.com') }}"
-                                            required autofocus>
-                                        @error('email')
+                                            required autofocus autocomplete="email">
+                                        @if ($errors->has('email'))
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
+                                        {{-- @error('email')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                        @enderror
+                                        @enderror --}}
                                     </div>
                                 </div>
                                 <div class="input-group no-border form-control-lg">
                                     <div class="input-group">
-                                        <input type="password" name="password"
+                                        <input type="password" name="password" id="password"
                                             class="form-control bg-input-login {{ $errors->has('password') ? ' is-invalid' : '' }}"
                                             placeholder="{{ __('PASSWORD') }}" value="{{ old('password', 'secret') }}"
-                                            required autofocus>
+                                            required autofocus autocomplete="current-password">
 
-                                        @error('password')
+                                        @if ($errors->has('password'))
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
+                                        {{-- @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                        @enderror
+                                        @enderror --}}
                                     </div>
                                 </div>
 
