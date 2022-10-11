@@ -2,7 +2,7 @@
     'namePage' => 'Login page',
     'class' => 'login-page sidebar-mini ',
     'activePage' => 'login',
-    'backgroundImage' => asset('assets') . '/img/bg14.jpg',
+    'backgroundImage' => asset('assets') . '/img/wallpaper-air.jpg',
 ])
 
 @section('content')
@@ -25,68 +25,75 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 ml-auto mr-auto">
-                <form role="form" method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <div class="card card-login card-plain">
-                        <div class="card-header ">
-                            <div class="logo-container">
-                                <img src="{{ asset('assets/img/now-logo.png') }}" alt="">
+            {{-- start login --}}
+            <div class="col-md-5 ml-auto mr-auto">
+                <div class="cards">
+                    <form role="form" method="POST" action="{{ route('login') }}">
+                        @csrf
+                        <div class="card card-login card-plain">
+                            <div class="card-header ">
+                                <div class="logo-container">
+                                    <img src="{{ asset('assets/img/logo-tni.png') }}" alt="">
+                                </div>
+                                <h4 class="text-login">TNI - ANGKATAN LAUT</h4>
                             </div>
-                        </div>
-                        <div class="card-body ">
-                            <div
-                                class="input-group no-border form-control-lg {{ $errors->has('email') ? ' has-danger' : '' }}">
-                                <span class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="now-ui-icons users_circle-08"></i>
-                                    </div>
-                                </span>
-                                <input class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                    placeholder="{{ __('Email') }}" type="email" name="email"
-                                    value="{{ old('email', 'admin@nowui.com') }}" required autofocus>
-                            </div>
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback" style="display: block;" role="alert">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
-                            <div
-                                class="input-group no-border form-control-lg {{ $errors->has('password') ? ' has-danger' : '' }}">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="now-ui-icons objects_key-25"></i></i>
+
+                            <div class="card-body ">
+                                <div class="input-group no-border mb-3  form-control-lg">
+                                    <div class="input-group">
+                                        <input type="email"name="email"
+                                            class="form-control  bg-input-login {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                            placeholder="{{ __('EMAIL') }}" value="{{ old('email', 'admin@nowui.com') }}"
+                                            required autofocus>
+                                        @error('email')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
-                                <input placeholder="Password"
-                                    class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
-                                    placeholder="{{ __('Password') }}" type="password" value="secret" required>
+                                <div class="input-group no-border form-control-lg">
+                                    <div class="input-group">
+                                        <input type="password" name="password"
+                                            class="form-control bg-input-login {{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                            placeholder="{{ __('PASSWORD') }}" value="{{ old('password', 'secret') }}"
+                                            required autofocus>
+
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+
+                                    <button type="submit" class="btn btn-login btn-dark mb-3">{{ __('LOGIN') }}</button>
+
+                                </div>
                             </div>
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback" style="display: block;" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
+
+                            {{-- <div class="card-footer ">
+                                
+                                <div class="pull-left">
+                                    <h6>
+                                        <a href="{{ route('register') }}"
+                                            class="link footer-link">{{ __('Create Account') }}</a>
+                                    </h6>
+                                </div>
+                                <div class="pull-right">
+                                    <h6>
+                                        <a href="{{ route('password.request') }}"
+                                            class="link footer-link">{{ __('Forgot Password?') }}</a>
+                                    </h6>
+                                </div>
+                            </div> --}}
                         </div>
-                        <div class="card-footer ">
-                            <button type="submit"
-                                class="btn btn-primary btn-round btn-lg btn-block mb-3">{{ __('Get Started') }}</button>
-                            <div class="pull-left">
-                                <h6>
-                                    <a href="{{ route('register') }}"
-                                        class="link footer-link">{{ __('Create Account') }}</a>
-                                </h6>
-                            </div>
-                            <div class="pull-right">
-                                <h6>
-                                    <a href="{{ route('password.request') }}"
-                                        class="link footer-link">{{ __('Forgot Password?') }}</a>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
+            {{-- end login --}}
         </div>
     </div>
 @endsection
