@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePerRequest;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
+use App\Http\Requests\StorePerRequest;
 
 class HomeController extends Controller
 {
@@ -71,14 +72,6 @@ class HomeController extends Controller
             $response =  Http::post('http://km-al-api.test/api/pers', $request->all());
         }
 
-        $response->throw();
-        if ($response->clientError()) {
-            return 'clientError';
-        }
-
-        if ($response->serverError()) {
-            return 'serverError';
-        }
 
         return to_route('home')->with('status', 'New data has been added.');
     }
