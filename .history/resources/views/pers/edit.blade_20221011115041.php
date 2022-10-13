@@ -21,9 +21,9 @@
                     </li>
                 </ul>
             </div>
+
         </div>
     </div>
-
     <div class="container ">
         <div class="row">
             <div class="col-md-12">
@@ -56,9 +56,7 @@
                             <div class="row">
                                 <div class="col-md-6 ">
                                     <div class="form-group ">
-                                        <label>{{ __(' status') }}</label>
-                                        <input type="text" name="status" class="form-control" placeholder="NRP"
-                                            value="{{ $data['status']['status_name'] }}">
+
                                         @include('alerts.feedback', ['field' => 'status_id'])
                                     </div>
                                 </div>

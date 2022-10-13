@@ -21,26 +21,23 @@
                     </li>
                 </ul>
             </div>
+
         </div>
     </div>
-
     <div class="container ">
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-tasks">
                     <div class="card-header">
-                        <form method="post" action="{{ route('update') }}" autocomplete="off"
-                            enctype="multipart/form-data">
-                            @method('patch')
+                        <form method="post" action="{{ route('store') }}" autocomplete="off" enctype="multipart/form-data">
                             @csrf
                             @include('alerts.success')
-                            <input type="hidden" name="per_id" value="{{ $data['per_id'] }}">
                             <div class="row">
                                 <div class="col-md-6 ">
                                     <div class="form-group ">
                                         <label>{{ __(' Name') }}</label>
                                         <input type="text" name="nama" class="form-control" placeholder="Full Name"
-                                            value="{{ $data['nama'] }}">
+                                            value="{{ old('nama') }}">
                                         @include('alerts.feedback', ['field' => 'nama'])
                                     </div>
                                 </div>
@@ -48,19 +45,19 @@
                                     <div class="form-group">
                                         <label>{{ __(' NRP') }}</label>
                                         <input type="text" name="nrp" class="form-control" placeholder="NRP"
-                                            value="{{ $data['nrp'] }}">
+                                            value="{{ old('nrp') }}">
                                         @include('alerts.feedback', ['field' => 'nrp'])
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 ">
-                                    <div class="form-group ">
-                                        <label>{{ __(' status') }}</label>
-                                        <input type="text" name="status" class="form-control" placeholder="NRP"
-                                            value="{{ $data['status']['status_name'] }}">
+                                    <div class="form-group">
+                                        <label>{{ __(' Status') }}</label>
+
                                         @include('alerts.feedback', ['field' => 'status_id'])
                                     </div>
+
                                 </div>
                                 <div class="col-md-6 ">
                                     <div class="form-group">
@@ -76,7 +73,7 @@
                                     <div class="form-group ">
                                         <label>{{ __(' Place of Birth') }}</label>
                                         <input type="text" name="tmp_lahir" class="form-control"
-                                            placeholder="Place of Birth" value="{{ $data['tmp_lahir'] }}">
+                                            placeholder="Place of Birth" value="{{ old('tmp_lahir') }}">
                                         @include('alerts.feedback', ['field' => 'tmp_lahir'])
                                     </div>
                                 </div>
@@ -84,7 +81,7 @@
                                     <div class="form-group ">
                                         <label>{{ __(' Date of Birth') }}</label>
                                         <input type="date" name="tgl_lahir" class="form-control"
-                                            placeholder="Date of Birth" value="{{ $data['tgl_lahir'] }}">
+                                            placeholder="Date of Birth" value="{{ old('tgl_lahir') }}">
                                         @include('alerts.feedback', ['field' => 'tgl_lahir'])
                                     </div>
                                 </div>
@@ -104,7 +101,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group ">
                                         <label>{{ __(' Address') }}</label>
-                                        <textarea class="form-control" placeholder="Full Address" name="alamat" style="height: 100px">{{ $data['alamat'] }}</textarea>
+                                        <textarea class="form-control" placeholder="Full Address" name="alamat" style="height: 100px">{{ old('alamat') }}</textarea>
                                         @include('alerts.feedback', ['field' => 'alamat'])
                                     </div>
                                 </div>

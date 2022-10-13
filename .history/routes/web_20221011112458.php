@@ -27,7 +27,7 @@ Route::prefix('/')->group(function () {
     Route::post('store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
     Route::get('{id}/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('edit');
     Route::patch('update', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
-    Route::get('{id}/detail', [App\Http\Controllers\HomeController::class, 'show'])->name('show');
+    Route::get('{id}/detail', [App\Http\Controllers\HomeController::class, 'show'])->name('detail');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -36,4 +36,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
     Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
+    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 });

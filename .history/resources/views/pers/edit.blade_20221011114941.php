@@ -21,9 +21,9 @@
                     </li>
                 </ul>
             </div>
+
         </div>
     </div>
-
     <div class="container ">
         <div class="row">
             <div class="col-md-12">
@@ -65,7 +65,14 @@
                                 <div class="col-md-6 ">
                                     <div class="form-group">
                                         <label>{{ __(' Title') }}</label>
-
+                                        <select class="form-control" name="title_id">
+                                            <option disabled>Select Title</option>
+                                            @foreach ($titles as $title)
+                                                <option value="{{ $title['title_id'] }}"
+                                                    @if ($title['title_id'] == $data['title']['title_id']) selected @endif>
+                                                    {{ $title['title_name'] }}</option>
+                                            @endforeach
+                                        </select>
                                         @include('alerts.feedback', ['field' => 'title_id'])
                                     </div>
                                 </div>

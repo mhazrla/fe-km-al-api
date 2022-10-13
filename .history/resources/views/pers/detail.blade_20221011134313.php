@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-    'namePage' => 'Add Personil',
+    'namePage' => 'Dashboard',
     'class' => 'login-page sidebar-mini ',
     'activePage' => 'home',
     'backgroundImage' => asset('now') . '/img/bg14.jpg',
@@ -17,7 +17,7 @@
                         </a>
                     </li>
                     <li>
-                        <h5 class="title align-text-center">{{ __('Add Data') }}</h5>
+                        <h5 class="title align-text-center">{{ __('Detail Personil') }}</h5>
                     </li>
                 </ul>
             </div>
