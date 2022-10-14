@@ -28,6 +28,7 @@ Route::prefix('/')->group(function () {
     Route::get('{id}/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('edit');
     Route::post('update/{per_id}', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
     Route::delete('destroy/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('destroy');
+    Route::get('{id}/detail', [App\Http\Controllers\HomeController::class, 'show'])->name('show');
 });
 
 Route::group(['middleware' => 'auth'], function () {

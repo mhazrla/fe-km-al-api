@@ -115,9 +115,9 @@ class HomeController extends Controller
             $foto = fopen($request->file('foto'), 'r');
 
             $response =  Http::attach('foto', $foto)
-                ->post('http://km-al-api.test/api/pers/' . $id . '?_method=PATCH', $request->all());
+                ->post('http://km-al-api.test/api/pers/' . $id, $request->all());
         } else {
-            $response =  Http::post('http://km-al-api.test/api/pers/' . $id . '?_method=PATCH', $request->all());
+            $response =  Http::post('http://km-al-api.test/api/pers/' . $id, $request->all());
         }
 
         return to_route('home')->with('status', 'New data has been added.');
