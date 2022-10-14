@@ -27,13 +27,13 @@ class HomeController extends Controller
     public function index()
     {
         $pers = null;
-        $response =  Http::get('https://km-al-api.dev/api/pers');
+        $response =  Http::get('http://km-al-api.test/api/pers');
         if ($response->successful()) {
             $pers = json_decode($response, true);
             $pers = $pers['pers'];
         }
         $title = null;
-        $titles =  Http::get('https://km-al-api.dev/api/title');
+        $titles =  Http::get('http://km-al-api.test/api/title');
         if ($titles->successful()) {
             $title = json_decode($titles, true);
             $title = $title['data'];
@@ -45,14 +45,14 @@ class HomeController extends Controller
     public function create()
     {
         $title = null;
-        $titles =  Http::get('https://km-al-api.dev/api/title');
+        $titles =  Http::get('http://km-al-api.test/api/title');
         if ($titles->successful()) {
             $title = json_decode($titles, true);
             $title = $title['data'];
         }
 
         $status = null;
-        $statuses =  Http::get('https://km-al-api.dev/api/status');
+        $statuses =  Http::get('http://km-al-api.test/api/status');
         if ($statuses->successful()) {
             $status = json_decode($statuses, true);
             $status = $status['data'];
@@ -68,9 +68,9 @@ class HomeController extends Controller
             $foto = fopen($request->file('foto'), 'r');
 
             $response =  Http::attach('foto', $foto)
-                ->post('https://km-al-api.dev/api/pers', $request->all());
+                ->post('http://km-al-api.test/api/pers', $request->all());
         } else {
-            $response =  Http::post('https://km-al-api.dev/api/pers', $request->all());
+            $response =  Http::post('http://km-al-api.test/api/pers', $request->all());
         }
 
 
@@ -94,7 +94,7 @@ class HomeController extends Controller
     public function edit($id)
     {
         if ($id) {
-            $response =  Http::get('https://km-al-api.dev/api/pers/' . $id);
+            $response =  Http::get('http://km-al-api.test/api/pers/' . $id);
             if ($response->successful()) {
                 $per = json_decode($response, true);
                 $per = $per['per'];
@@ -102,14 +102,14 @@ class HomeController extends Controller
         }
 
         $title = null;
-        $titles =  Http::get('https://km-al-api.dev/api/title');
+        $titles =  Http::get('http://km-al-api.test/api/title');
         if ($titles->successful()) {
             $title = json_decode($titles, true);
             $title = $title['data'];
         }
 
         $status = null;
-        $statuses =  Http::get('https://km-al-api.dev/api/status');
+        $statuses =  Http::get('http://km-al-api.test/api/status');
         if ($statuses->successful()) {
             $status = json_decode($statuses, true);
             $status = $status['data'];
@@ -124,7 +124,7 @@ class HomeController extends Controller
     public function update(Request $request)
     {
         $id = $request->per_id;
-        Http::patch('https://km-al-api.dev/api/pers/' . $id, [
+        Http::patch('http://km-al-api.test/api/pers/' . $id, [
             'nama' => $request->nama,
             'nrp' => $request->nrp,
             'tmp_lahir' => $request->tmp_lahir,
