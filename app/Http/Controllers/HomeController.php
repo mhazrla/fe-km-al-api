@@ -106,18 +106,27 @@ class HomeController extends Controller
         return view('pers.edit', ['data' => $per, 'titles' => $title, 'statuses' => $status]);
     }
 
-    public function update(Request $request)
+    public function update(StorePerRequest $request)
     {
         $id = $request->per_id;
-        Http::patch('http://km-al-api.test/api/pers/' . $id, [
-            'nama' => $request->nama,
-            'nrp' => $request->nrp,
-            'tmp_lahir' => $request->tmp_lahir,
-            'tgl_lahir' => $request->tgl_lahir,
-            'alamat' => $request->alamat,
-            'title_id' => $request->title_id,
-            'status_id' => $request->status_id,
-        ]);
+
+
+        if ($request->hasFile('foto')) {
+            $foto = fopen($request->file('foto'), 'r');
+
+            $response =  Http::attach('foto', $foto)
+                ->post('http://km-al-api.test/api/pers/' . $id . '?_method=PATCH', $request->all());
+        } else {
+            $response =  Http::post('http://km-al-api.test/api/pers/' . $id . '?_method=PATCH', $request->all());
+        }
+
+        return to_route('home')->with('status', 'New data has been added.');
+    }
+
+    public function destroy($id)
+    {
+        $response = Http::delete('http://km-al-api.test/api/pers/' . $id);
+        // return $response->json();
         return to_route('home')->with('status', 'New data has been added.');
     }
 }
