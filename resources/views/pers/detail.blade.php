@@ -36,8 +36,7 @@
                     <div class="card-body">
                         <div class="author">
                             <a href="#">
-                                <img class="avatar border-gray" src="{{ asset('assets') }}/img/default-avatar.png"
-                                    alt="...">
+                                <img class="avatar border-gray" src="{{  $data['foto']  }}" alt="...">
                                 <h5 class="title">{{ $data['nama'] }}</h5>
                             </a>
                             <p class="description">

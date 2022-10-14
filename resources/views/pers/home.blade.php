@@ -52,7 +52,7 @@
                         <tbody>
                             @forelse ($pers as $per)
                             <tr>
-                                <td class="text-center"><img class="avatar border-gray" src="{{asset('assets')}}/img/default-avatar.png" alt="..."></td>
+                                <td class="text-center"><img class="avatar border-gray" src="{{  $per['foto']  }}" alt="..."></td>
                                 <td>{{ $per['nrp'] }}</td>
                                 <td>{{ $per['nama'] }}</td>
                                 <td>{{ $per['title']['title_name'] }}</td>
