@@ -38,6 +38,7 @@ class HomeController extends Controller
             $title = json_decode($titles, true);
             $title = $title['data'];
         }
+
         return view('pers.home', ['pers' => $pers, 'titles' => $title]);
     }
 
@@ -74,6 +75,20 @@ class HomeController extends Controller
 
 
         return to_route('home')->with('status', 'New data has been added.');
+    }
+
+    public function show($id)
+    {
+        if ($id) {
+            $response =  Http::get('http://km-al-api.test/api/pers/' . $id);
+            if ($response->successful()) {
+                $per = json_decode($response, true);
+                $per = $per['per'];
+            }
+        }
+
+        //dd( $per);
+        return view('pers.detail', ['data' => $per]);
     }
 
     public function edit($id)
