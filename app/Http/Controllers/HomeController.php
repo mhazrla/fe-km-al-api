@@ -87,7 +87,6 @@ class HomeController extends Controller
             }
         }
 
-        //dd( $per);
         return view('pers.detail', ['data' => $per]);
     }
 
@@ -115,8 +114,6 @@ class HomeController extends Controller
             $status = $status['data'];
         }
 
-        // dd($status, $title, $per);
-
 
         return view('pers.edit', ['data' => $per, 'titles' => $title, 'statuses' => $status]);
     }
@@ -142,6 +139,6 @@ class HomeController extends Controller
     {
         $response = Http::delete('http://km-al-api.test/api/pers/' . $id);
         // return $response->json();
-        return to_route('home')->with('status', 'New data has been added.');
+        return to_route('home')->with('status', 'New data has been deleted.');
     }
 }
