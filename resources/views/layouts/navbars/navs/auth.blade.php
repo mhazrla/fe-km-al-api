@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg bg-primary  navbar-absolute">
     <div class="container-fluid">
         <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">{{ $namePage }}</a>
+            <a class="navbar-brand" href="/">Dashboard</a>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
