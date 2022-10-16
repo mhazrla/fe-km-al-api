@@ -1,8 +1,9 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-primary  navbar-absolute">
     <div class="container-fluid">
-        <div class="navbar-wrapper">
-            <a class="navbar-brand" href="/">Dashboard</a>
+        <div class="navbar-wrapper ">
+            <a class="navbar-brand" href="/"><img src="{{ asset('assets/img/logo-tni.png') }}" alt="" height="35rem"></a>
+            <a class="navbar-brand" href="/">TNI AL</a>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -17,31 +18,17 @@
                     <a class="nav-link" href="{{ route('home') }}">
                         <i class="now-ui-icons media-2_sound-wave"></i>
                         <p>
-                            <span class="d-lg-none d-md-block">{{ __('Stats') }}</span>Home
+                            <span class="d-lg-none d-md-block">{{ __('Stats') }}</span>Dashboard
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('create') }}">
-                        <i class="now-ui-icons media-2_sound-wave"></i>
+                        <i class="now-ui-icons ui-1_simple-add"></i>
                         <p>
                             <span class="d-lg-none d-md-block">{{ __('Stats') }}</span>Add Personil
                         </p>
                     </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="now-ui-icons location_world"></i>
-                        <p>
-                            <span class="d-lg-none d-md-block">{{ __('Some Actions') }}</span>
-                        </p>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">{{ __('Action') }}</a>
-                        <a class="dropdown-item" href="#">{{ __('Another action') }}</a>
-                        <a class="dropdown-item" href="#">{{ __('Something else here') }}</a>
-                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -52,8 +39,6 @@
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('My profile') }}</a>
-                        <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Edit profile') }}</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
