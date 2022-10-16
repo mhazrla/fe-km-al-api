@@ -1,9 +1,4 @@
-@extends('layouts.app', [
-    'namePage' => 'Dashboard',
-    'class' => 'login-page sidebar-mini ',
-    'activePage' => 'home',
-    'backgroundImage' => asset('now') . '/img/bg14.jpg',
-])
+@extends('layouts.app')
 
 @section('content')
     <div class="panel-header panel-header-sm container-fluid">
@@ -36,7 +31,9 @@
                     <div class="card-body">
                         <div class="author">
                             <a href="#">
-                                <img class="avatar border-gray" src="{{  $data['foto']  }}" alt="...">
+                                <img class="avatar border-gray"
+                                    src="{{ $data['foto'] ? $data['foto'] : 'asset(\'assets/img/default-avatar.png\')' }}">
+
                                 <h5 class="title">{{ $data['nama'] }}</h5>
                             </a>
                             <p class="description">
@@ -61,8 +58,8 @@
                                         <input type="text" name="name" class="form-control"
                                             value="{{ $data['nrp'] }}" readonly>
 
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 pr-1">
@@ -104,8 +101,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection
-
-

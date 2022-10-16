@@ -14,10 +14,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -26,17 +22,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pers = null;
-        $response =  Http::get('http://km-al-api.test/api/pers');
-        if ($response->successful()) {
-            $pers = json_decode($response, true);
-            $pers = $pers['pers'];
-        }
+
         $title = null;
         $titles =  Http::get('http://km-al-api.test/api/title');
         if ($titles->successful()) {
             $title = json_decode($titles, true);
             $title = $title['data'];
+        }
+
+        $pers = null;
+        $response =  Http::get('http://km-al-api.test/api/pers');
+        if ($response->successful()) {
+            $pers = json_decode($response, true);
+            $pers = $pers['pers'];
         }
 
         return view('pers.home', ['pers' => $pers, 'titles' => $title]);
@@ -84,22 +82,16 @@ class HomeController extends Controller
             if ($response->successful()) {
                 $per = json_decode($response, true);
                 $per = $per['per'];
+
+                return view('pers.detail', ['data' => $per]);
+            } else {
+                return abort(404);
             }
         }
-
-        return view('pers.detail', ['data' => $per]);
     }
 
     public function edit($id)
     {
-        if ($id) {
-            $response =  Http::get('http://km-al-api.test/api/pers/' . $id);
-            if ($response->successful()) {
-                $per = json_decode($response, true);
-                $per = $per['per'];
-            }
-        }
-
         $title = null;
         $titles =  Http::get('http://km-al-api.test/api/title');
         if ($titles->successful()) {
@@ -114,8 +106,16 @@ class HomeController extends Controller
             $status = $status['data'];
         }
 
-
-        return view('pers.edit', ['data' => $per, 'titles' => $title, 'statuses' => $status]);
+        if ($id) {
+            $response =  Http::get('http://km-al-api.test/api/pers/' . $id);
+            if ($response->successful()) {
+                $per = json_decode($response, true);
+                $per = $per['per'];
+                return view('pers.edit', ['data' => $per, 'titles' => $title, 'statuses' => $status]);
+            } else {
+                return abort(404);
+            }
+        }
     }
 
     public function update(StorePerRequest $request)
