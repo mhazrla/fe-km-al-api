@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-    'namePage' => 'Add Personil',
+    'namePage' => 'Edit Personil',
     'class' => 'login-page sidebar-mini ',
     'activePage' => 'home',
     'backgroundImage' => asset('now') . '/img/bg14.jpg',
@@ -17,7 +17,7 @@
                         </a>
                     </li>
                     <li>
-                        <h5 class="title align-text-center">{{ __('Add Data') }}</h5>
+                        <h5 class="title align-text-center">{{ __('Edit Data') }}</h5>
                     </li>
                 </ul>
             </div>
@@ -29,12 +29,11 @@
             <div class="col-md-12">
                 <div class="card card-tasks">
                     <div class="card-header">
-                        <form method="post" action="{{ route('update') }}" autocomplete="off"
-                            enctype="multipart/form-data">
-                            @method('patch')
+                        <form method="post" action="{{ route('update', ['per_id' => $data['per_id']]) }}"
+                            autocomplete="off" enctype="multipart/form-data">
                             @csrf
                             @include('alerts.success')
-                            <input type="hidden" name="per_id" value="{{ $data['per_id'] }}">
+
                             <div class="row">
                                 <div class="col-md-6 ">
                                     <div class="form-group ">

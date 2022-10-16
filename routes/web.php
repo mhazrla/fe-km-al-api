@@ -23,7 +23,8 @@ Route::prefix('/')->group(function () {
     Route::get('create', [App\Http\Controllers\HomeController::class, 'create'])->name('create');
     Route::post('store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
     Route::get('{id}/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('edit');
-    Route::patch('update', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
+    Route::post('update/{per_id}', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
+    Route::delete('destroy/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('destroy');
     Route::get('{id}/detail', [App\Http\Controllers\HomeController::class, 'show'])->name('show');
 });
 
