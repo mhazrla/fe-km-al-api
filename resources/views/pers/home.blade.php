@@ -1,9 +1,4 @@
-@extends('layouts.app', [
-    'namePage' => 'Dashboard',
-    'class' => 'login-page sidebar-mini ',
-    'activePage' => 'home',
-    'backgroundImage' => asset('now') . '/img/bg14.jpg',
-])
+@extends('layouts.app')
 
 @section('content')
     <div class="panel-header panel-header-sm container-fluid">
@@ -53,8 +48,10 @@
                             <tbody>
                                 @forelse ($pers as $per)
                                     <tr>
-                                        <td class="text-center"><img class="avatar border-gray" src="{{ $per['foto'] }}"
-                                                alt="..."></td>
+                                        <td class="text-center">
+                                            <img class="avatar border-gray"
+                                                src="{{ $per['foto'] ? $per['foto'] : 'asset(\'assets/img/default-avatar.png\')' }}">
+                                        </td>
                                         <td>{{ $per['nrp'] }}</td>
                                         <td>{{ $per['nama'] }}</td>
                                         <td>{{ $per['title']['title_name'] }}</td>

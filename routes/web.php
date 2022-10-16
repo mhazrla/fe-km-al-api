@@ -18,20 +18,20 @@ use App\Http\Controllers\HomeController;
 
 Auth::routes();
 
-Route::prefix('/')->group(function () {
-    Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('create', [App\Http\Controllers\HomeController::class, 'create'])->name('create');
-    Route::post('store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
-    Route::get('{id}/edit', [App\Http\Controllers\HomeController::class, 'edit'])->name('edit');
-    Route::post('update/{per_id}', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
-    Route::delete('destroy/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('destroy');
-    Route::get('{id}/detail', [App\Http\Controllers\HomeController::class, 'show'])->name('show');
+Route::prefix('/')->controller(\App\Http\Controllers\HomeController::class)->middleware('auth')->group(function () {
+    Route::redirect('/', '/home');
+    Route::get('home', 'index')->name('home');
+    Route::get('create', 'create')->name('create');
+    Route::post('store', 'store')->name('store');
+    Route::get('{id}/edit', 'edit')->name('edit');
+    Route::post('update/{per_id}', 'update')->name('update');
+    Route::delete('destroy/{id}', 'destroy')->name('destroy');
+    Route::get('{id}/detail', 'show')->name('show');
+    Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
+
     Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
