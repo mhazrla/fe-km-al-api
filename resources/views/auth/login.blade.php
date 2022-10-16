@@ -27,7 +27,7 @@
                 </div>
             </div>
             {{-- end col --}}
-          
+
             {{-- start login --}}
             <div class="col-md-5 ml-auto mr-auto">
                 <div class="cards">
@@ -45,7 +45,7 @@
                                 <div class="input-group no-border mb-3  form-control-lg">
                                     <div class="input-group">
                                         <input type="email"name="email"
-                                            class="form-control  bg-input-login {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                            class="form-control bg-input-login {{ $errors->has('email') ? ' is-invalid' : '' }}"
                                             placeholder="{{ __('EMAIL') }}" value="{{ old('email', 'admin@nowui.com') }}"
                                             required autofocus>
                                         @error('email')
@@ -97,7 +97,7 @@
                 </div>
             </div>
             {{-- end login --}}
-            
+
         </div>
     </div>
 @endsection

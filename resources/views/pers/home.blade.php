@@ -15,6 +15,8 @@
         </div>
     </div>
 
+
+
     <div class="container">
         <div class="row">
             @forelse ($titles as $title)
@@ -58,15 +60,19 @@
                                         <td>{{ $per['title']['title_name'] }}</td>
                                         <td class="td-actions text-center d-flex justify-content-around">
                                             <a href="{{ route('show', $per['per_id']) }}"><button type="button"
-                                                    rel="tooltip" class="btn btn-info btn-sm btn-round btn-icon">
+                                                    rel="tooltip" class="btn btn-info btn-sm">
                                                     <i class="now-ui-icons users_single-02"></i>
                                                 </button></a>
                                             <a href="{{ route('edit', $per['per_id']) }}"><button type="button"
-                                                    rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon">
+                                                    rel="tooltip" class="btn btn-success btn-sm">
                                                     <i class="now-ui-icons ui-2_settings-90"></i>
                                                 </button></a>
+                                            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                                data-bs-target="#Modal{{ $per['per_id'] }}">
+                                                <i class="now-ui-icons ui-1_simple-remove"></i>
+                                            </button>
 
-                                            <form action="{{ route('destroy', $per['per_id']) }}" method="post">
+                                            {{-- <form action="{{ route('destroy', $per['per_id']) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" rel="tooltip"
@@ -75,18 +81,50 @@
                                                     <i class="now-ui-icons ui-1_simple-remove"></i>
                                                 </button>
 
-                                            </form>
+                                            </form> --}}
+
+                                            {{-- MODAL DELETE --}}
+                                            <div class="modal fade" id="Modal{{ $per['per_id'] }}" tabindex="-1"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog modal-lg modal-dialog-centered">
+                                                    <div class="modal-content bg-danger">
+                                                        <div class="modal-header">
+                                                            <h5 class="txtInfo modal-title">Are you sure?</h5>
+                                                            <button type="button" class="btn btn-danger"
+                                                                data-bs-dismiss="modal" aria-label="Close"> X
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body text-white">
+                                                            <p>data will be deleted forever! </p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btnClose"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                            <form action="{{ route('destroy', $per['per_id']) }}"
+                                                                method="POST" class="d-inline-block">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btnDelete">Delete</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{-- MODAL DELETE --}}
                                         </td>
+
                                     </tr>
+
                                 @empty
                                     <tr>
                                         <td colspan="5" class="text-center">
-
                                             no data
                                         </td>
                                     </tr>
                                 @endforelse
 
+
+                            </tbody>
                         </table>
                     </div>
                 </div>
