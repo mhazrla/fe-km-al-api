@@ -63,11 +63,13 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @-webkit-keyframes shake {
+
     from,
     to {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
+
     10%,
     30%,
     50%,
@@ -76,6 +78,7 @@ Copyright (c) 2015 Daniel Eden
         -webkit-transform: translate3d(-10px, 0, 0);
         transform: translate3d(-10px, 0, 0);
     }
+
     20%,
     40%,
     60%,
@@ -86,11 +89,13 @@ Copyright (c) 2015 Daniel Eden
 }
 
 @keyframes shake {
+
     from,
     to {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
+
     10%,
     30%,
     50%,
@@ -99,6 +104,7 @@ Copyright (c) 2015 Daniel Eden
         -webkit-transform: translate3d(-10px, 0, 0);
         transform: translate3d(-10px, 0, 0);
     }
+
     20%,
     40%,
     60%,
@@ -119,6 +125,7 @@ Copyright (c) 2015 Daniel Eden
         -webkit-transform: translate3d(0, -100%, 0);
         transform: translate3d(0, -100%, 0);
     }
+
     to {
         opacity: 1;
         -webkit-transform: none;
@@ -132,6 +139,7 @@ Copyright (c) 2015 Daniel Eden
         -webkit-transform: translate3d(0, -100%, 0);
         transform: translate3d(0, -100%, 0);
     }
+
     to {
         opacity: 1;
         -webkit-transform: none;
@@ -148,6 +156,7 @@ Copyright (c) 2015 Daniel Eden
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
@@ -157,6 +166,7 @@ Copyright (c) 2015 Daniel Eden
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
@@ -171,6 +181,7 @@ Copyright (c) 2015 Daniel Eden
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
         -webkit-transform: translate3d(0, 100%, 0);
@@ -182,6 +193,7 @@ Copyright (c) 2015 Daniel Eden
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
         -webkit-transform: translate3d(0, 100%, 0);
@@ -198,6 +210,7 @@ Copyright (c) 2015 Daniel Eden
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
         -webkit-transform: translate3d(0, -100%, 0);
@@ -209,6 +222,7 @@ Copyright (c) 2015 Daniel Eden
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
         -webkit-transform: translate3d(0, -100%, 0);
@@ -1289,7 +1303,7 @@ fieldset[disabled] .btn-link.active {
 
 .btn-round {
     border-width: 1px;
-    border-radius: 30px;
+    border-radius: 10px;
     padding-right: 23px;
     padding-left: 23px;
 }
@@ -1329,7 +1343,7 @@ fieldset[disabled] .btn-link.active {
 .form-control {
     background-color: transparent;
     border: 1px solid #E3E3E3;
-    border-radius: 30px;
+    border-radius: 8px;
     color: #2c2c2c;
     line-height: normal;
     height: auto;
@@ -1746,9 +1760,7 @@ textarea.form-control {
     max-height: 80px;
     padding: 10px 10px 0 0;
     resize: none;
-    border: none;
-    border-bottom: 1px solid #E3E3E3;
-    border-radius: 0;
+    border-radius: 12px;
     line-height: 2;
 }
 
@@ -1778,15 +1790,12 @@ textarea.form-control:active {
 }
 
 .form-group input[type=file] {
-    opacity: 0;
-    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 100;
 }
 
 .form-text {
@@ -1912,6 +1921,7 @@ p.description {
 
 .title {
     font-weight: 700;
+    color: #7D1314;
 }
 
 .title.title-up {
@@ -3157,6 +3167,7 @@ Created using IcoMoon - icomoon.io
     0% {
         -webkit-transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(360deg);
     }
@@ -3167,6 +3178,7 @@ Created using IcoMoon - icomoon.io
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
@@ -4146,7 +4158,7 @@ Created using IcoMoon - icomoon.io
 .main-panel {
     position: relative;
     float: right;
-    width: calc(100% - 260px);
+    width: 100%;
     background-color: #E3E3E3;
     background-color: #ebecf1;
     transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -4180,12 +4192,10 @@ Created using IcoMoon - icomoon.io
 }
 
 .panel-header {
-    height: 260px;
-    padding-top: 80px;
-    padding-bottom: 45px;
-    background: #141E30;
+    min-height: 4rem;
+    margin-top: 6rem;
+
     /* fallback for old browsers */
-    background: linear-gradient(to right, #0c2646 0%, #204065 60%, #2a5788 100%);
     position: relative;
     overflow: hidden;
 }
@@ -4206,7 +4216,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .panel-header-sm {
-    height: 135px;
+    min-height: 3rem;
 }
 
 .panel-header-lg {
@@ -4568,11 +4578,12 @@ Created using IcoMoon - icomoon.io
 .card {
     border: 0;
     border-radius: 0.1875rem;
+    padding: 20px;
     display: inline-block;
     position: relative;
     width: 100%;
     margin-bottom: 20px;
-    box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.1);
+    box-shadow: 10px 10px 15px 10px rgba(39, 39, 39, 0.1);
 }
 
 .card [data-notify="container"].alert {
@@ -4780,61 +4791,76 @@ Created using IcoMoon - icomoon.io
     .profile-photo .profile-photo-small {
         margin-left: -2px;
     }
+
     .button-dropdown {
         display: none;
     }
+
     [data-notify="container"].alert {
         min-width: 400px;
     }
+
     #minimizeSidebar {
         display: none;
     }
+
     .timeline>li>.timeline-panel {
         width: 86% !important;
         float: right !important;
     }
+
     .timeline:before,
     .timeline>li>.timeline-badge {
         left: 5% !important;
     }
+
     .timeline>li>.timeline-panel:before {
         border-left-width: 0;
         border-right-width: 15px;
         left: -15px;
         right: auto !important;
     }
+
     .timeline>li>.timeline-panel:after {
         border-left-width: 0;
         border-right-width: 14px;
         left: -14px;
         right: auto !important;
     }
+
     .timeline>li:not(.timeline-inverted)>.timeline-panel:after,
     .timeline>li:not(.timeline-inverted)>.timeline-panel:before {
         filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=2);
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
     }
+
     .navbar .container-fluid {
         padding-right: 15px;
         padding-left: 15px;
     }
+
     .navbar .navbar-collapse .input-group {
         margin: 0;
         margin-top: 5px;
     }
+
     .navbar .navbar-nav .nav-item:first-child {
         margin-top: 10px;
     }
+
     .navbar .navbar-nav .nav-item:not(:last-child) {
         margin-bottom: 10px;
     }
+
     .navbar .dropdown.show .dropdown-menu {
         display: block;
     }
+
     .navbar .dropdown .dropdown-menu {
         display: none;
     }
+
     .navbar .dropdown.show .dropdown-menu,
     .navbar .dropdown .dropdown-menu {
         background-color: transparent;
@@ -4845,27 +4871,34 @@ Created using IcoMoon - icomoon.io
         margin: 0px 1rem;
         margin-top: 0px;
     }
+
     .navbar .dropdown.show .dropdown-menu:before,
     .navbar .dropdown .dropdown-menu:before {
         display: none;
     }
+
     .navbar .dropdown-menu .dropdown-item:focus,
     .navbar .dropdown-menu .dropdown-item:hover {
         color: #FFFFFF;
     }
+
     .navbar.bg-white .dropdown-menu .dropdown-item:focus,
     .navbar.bg-white .dropdown-menu .dropdown-item:hover {
         color: #888;
     }
+
     .navbar.bg-white:not(.navbar-transparent) .navbar-toggler-bar {
         background-color: #888;
     }
+
     .wrapper {
         transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     }
+
     .sidebar {
         box-shadow: none;
     }
+
     #bodyClick {
         height: 100%;
         width: 100%;
@@ -4880,16 +4913,20 @@ Created using IcoMoon - icomoon.io
         background-color: transparent;
         transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     }
+
     .footer .copyright {
         text-align: right;
     }
+
     .section-nucleo-icons .icons-container {
         margin-top: 65px;
     }
+
     .navbar-nav .nav-link i.fa,
     .navbar-nav .nav-link i.now-ui-icons {
         opacity: .5;
     }
+
     .sidebar,
     .bootstrap-navbar {
         position: fixed;
@@ -4907,11 +4944,13 @@ Created using IcoMoon - icomoon.io
         -webkit-transform: translate3d(-260px, 0, 0);
         transform: translate3d(-260px, 0, 0);
     }
+
     .bar1,
     .bar2,
     .bar3 {
         outline: 1px solid transparent;
     }
+
     .bar1 {
         top: 0px;
         -webkit-animation: topbar-back 500ms linear 0s;
@@ -4919,9 +4958,11 @@ Created using IcoMoon - icomoon.io
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
+
     .bar2 {
         opacity: 1;
     }
+
     .bar3 {
         bottom: 0px;
         -webkit-animation: bottombar-back 500ms linear 0s;
@@ -4929,6 +4970,7 @@ Created using IcoMoon - icomoon.io
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
+
     .toggled .bar1 {
         top: 6px;
         -webkit-animation: topbar-x 500ms linear 0s;
@@ -4936,9 +4978,11 @@ Created using IcoMoon - icomoon.io
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
+
     .toggled .bar2 {
         opacity: 0;
     }
+
     .toggled .bar3 {
         bottom: 6px;
         -webkit-animation: bottombar-x 500ms linear 0s;
@@ -4946,166 +4990,203 @@ Created using IcoMoon - icomoon.io
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
+
     @keyframes topbar-x {
         0% {
             top: 0px;
             -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
         }
+
         45% {
             top: 6px;
             -webkit-transform: rotate(145deg);
             transform: rotate(145deg);
         }
+
         75% {
             -webkit-transform: rotate(130deg);
             transform: rotate(130deg);
         }
+
         100% {
             -webkit-transform: rotate(135deg);
             transform: rotate(135deg);
         }
     }
+
     @-webkit-keyframes topbar-x {
         0% {
             top: 0px;
             -webkit-transform: rotate(0deg);
         }
+
         45% {
             top: 6px;
             -webkit-transform: rotate(145deg);
         }
+
         75% {
             -webkit-transform: rotate(130deg);
         }
+
         100% {
             -webkit-transform: rotate(135deg);
         }
     }
+
     @keyframes topbar-back {
         0% {
             top: 6px;
             -webkit-transform: rotate(135deg);
             transform: rotate(135deg);
         }
+
         45% {
             -webkit-transform: rotate(-10deg);
             transform: rotate(-10deg);
         }
+
         75% {
             -webkit-transform: rotate(5deg);
             transform: rotate(5deg);
         }
+
         100% {
             top: 0px;
             -webkit-transform: rotate(0);
             transform: rotate(0);
         }
     }
+
     @-webkit-keyframes topbar-back {
         0% {
             top: 6px;
             -webkit-transform: rotate(135deg);
         }
+
         45% {
             -webkit-transform: rotate(-10deg);
         }
+
         75% {
             -webkit-transform: rotate(5deg);
         }
+
         100% {
             top: 0px;
             -webkit-transform: rotate(0);
         }
     }
+
     @keyframes bottombar-x {
         0% {
             bottom: 0px;
             -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
         }
+
         45% {
             bottom: 6px;
             -webkit-transform: rotate(-145deg);
             transform: rotate(-145deg);
         }
+
         75% {
             -webkit-transform: rotate(-130deg);
             transform: rotate(-130deg);
         }
+
         100% {
             -webkit-transform: rotate(-135deg);
             transform: rotate(-135deg);
         }
     }
+
     @-webkit-keyframes bottombar-x {
         0% {
             bottom: 0px;
             -webkit-transform: rotate(0deg);
         }
+
         45% {
             bottom: 6px;
             -webkit-transform: rotate(-145deg);
         }
+
         75% {
             -webkit-transform: rotate(-130deg);
         }
+
         100% {
             -webkit-transform: rotate(-135deg);
         }
     }
+
     @keyframes bottombar-back {
         0% {
             bottom: 6px;
             -webkit-transform: rotate(-135deg);
             transform: rotate(-135deg);
         }
+
         45% {
             -webkit-transform: rotate(10deg);
             transform: rotate(10deg);
         }
+
         75% {
             -webkit-transform: rotate(-5deg);
             transform: rotate(-5deg);
         }
+
         100% {
             bottom: 0px;
             -webkit-transform: rotate(0);
             transform: rotate(0);
         }
     }
+
     @-webkit-keyframes bottombar-back {
         0% {
             bottom: 6px;
             -webkit-transform: rotate(-135deg);
         }
+
         45% {
             -webkit-transform: rotate(10deg);
         }
+
         75% {
             -webkit-transform: rotate(-5deg);
         }
+
         100% {
             bottom: 0px;
             -webkit-transform: rotate(0);
         }
     }
+
     @-webkit-keyframes fadeIn {
         0% {
             opacity: 0;
         }
+
         100% {
             opacity: 1;
         }
     }
+
     @keyframes fadeIn {
         0% {
             opacity: 0;
         }
+
         100% {
             opacity: 1;
         }
     }
+
     .navbar-toggler-bar {
         display: block;
         position: relative;
@@ -5114,60 +5195,75 @@ Created using IcoMoon - icomoon.io
         border-radius: 1px;
         background: #FFFFFF;
     }
+
     .navbar-toggler-bar+.navbar-toggler-bar {
         margin-top: 7px;
     }
+
     .navbar-toggler-bar+.navbar-toggler-bar.navbar-kebab {
         margin-top: 3px !important;
     }
+
     .navbar-toggler-bar.bar2 {
         width: 17px;
         transition: width .2s linear;
     }
+
     .main-panel {
         width: 100%;
     }
+
     .navbar-toggle .navbar-toggler,
     .navbar-toggle {
         display: block !important;
     }
+
     .navbar .toggled .navbar-toggler-bar {
         width: 24px;
     }
+
     .navbar .toggled .navbar-toggler-bar+.navbar-toggler-bar {
         margin-top: 5px;
     }
+
     .nav-open .main-panel {
         right: 0;
         -webkit-transform: translate3d(260px, 0, 0);
         transform: translate3d(260px, 0, 0);
     }
+
     .nav-open .sidebar {
         -webkit-transform: translate3d(0px, 0, 0);
         transform: translate3d(0px, 0, 0);
         box-shadow: 0px 2px 22px 0 rgba(0, 0, 0, 0.2), 0px 2px 30px 0 rgba(0, 0, 0, 0.35);
     }
+
     .nav-open body {
         position: relative;
         overflow-x: hidden;
     }
+
     .nav-open .menu-on-right .main-panel {
         -webkit-transform: translate3d(-260px, 0, 0);
         transform: translate3d(-260px, 0, 0);
     }
+
     .nav-open .menu-on-right .navbar-collapse,
     .nav-open .menu-on-right .sidebar {
         -webkit-transform: translate3d(0px, 0, 0);
         transform: translate3d(0px, 0, 0);
     }
+
     .nav-open .menu-on-right .navbar-translate {
         -webkit-transform: translate3d(-300px, 0, 0);
         transform: translate3d(-300px, 0, 0);
     }
+
     .nav-open .menu-on-right #bodyClick {
         right: 260px;
         left: auto;
     }
+
     .menu-on-right .sidebar {
         left: auto;
         right: 0;
@@ -5180,19 +5276,24 @@ Created using IcoMoon - icomoon.io
     .navbar-collapse {
         background: none !important;
     }
+
     .navbar .navbar-toggle {
         display: none;
     }
+
     .navbar-nav .nav-link.profile-photo {
         padding: 0;
         margin: 7px 0.7rem;
     }
+
     .section-nucleo-icons .icons-container {
         margin: 0 0 0 auto;
     }
+
     .dropdown-menu .dropdown-item {
         color: inherit;
     }
+
     .footer .copyright {
         float: right;
         padding-right: 15px;
@@ -5207,25 +5308,31 @@ Created using IcoMoon - icomoon.io
         padding-right: 100px;
         text-align: center;
     }
+
     .nav-tabs .nav-item>.nav-link {
         margin-bottom: 5px;
     }
+
     .user-profile [class*="col-"] {
         padding-left: 15px !important;
         padding-right: 15px !important;
     }
+
     .card-stats [class*="col-"] .statistics::after {
         display: none;
     }
+
     .main-panel .content {
         padding-left: 15px;
         padding-right: 15px;
     }
+
     .footer nav {
         display: block;
         margin-bottom: 5px;
         float: none;
     }
+
     .landing-page .section-story-overview .image-container:nth-child(2) {
         margin-left: 0;
         margin-bottom: 30px;
@@ -5237,32 +5344,40 @@ Created using IcoMoon - icomoon.io
         margin-left: 0;
         margin-right: 0;
     }
+
     [data-notify="container"].alert {
         left: 10px !important;
         right: 10px !important;
         width: auto;
     }
+
     .card-contributions .card-stats {
         flex-direction: column;
     }
+
     .card-contributions .card-stats .bootstrap-switch {
         margin-bottom: 15px;
     }
+
     .footer .copyright {
         text-align: center;
     }
+
     .section-nucleo-icons .icons-container i {
         font-size: 30px;
     }
+
     .section-nucleo-icons .icons-container i:nth-child(6) {
         font-size: 48px;
     }
+
     .page-header .container h6.category-absolute {
         width: 90%;
     }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
     .sidebar,
     .bootstrap-navbar {
         position: fixed;
@@ -5280,11 +5395,13 @@ Created using IcoMoon - icomoon.io
         -webkit-transform: translate3d(-260px, 0, 0);
         transform: translate3d(-260px, 0, 0);
     }
+
     .bar1,
     .bar2,
     .bar3 {
         outline: 1px solid transparent;
     }
+
     .bar1 {
         top: 0px;
         -webkit-animation: topbar-back 500ms linear 0s;
@@ -5292,9 +5409,11 @@ Created using IcoMoon - icomoon.io
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
+
     .bar2 {
         opacity: 1;
     }
+
     .bar3 {
         bottom: 0px;
         -webkit-animation: bottombar-back 500ms linear 0s;
@@ -5302,6 +5421,7 @@ Created using IcoMoon - icomoon.io
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
+
     .toggled .bar1 {
         top: 6px;
         -webkit-animation: topbar-x 500ms linear 0s;
@@ -5309,9 +5429,11 @@ Created using IcoMoon - icomoon.io
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
+
     .toggled .bar2 {
         opacity: 0;
     }
+
     .toggled .bar3 {
         bottom: 6px;
         -webkit-animation: bottombar-x 500ms linear 0s;
@@ -5319,166 +5441,203 @@ Created using IcoMoon - icomoon.io
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
+
     @keyframes topbar-x {
         0% {
             top: 0px;
             -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
         }
+
         45% {
             top: 6px;
             -webkit-transform: rotate(145deg);
             transform: rotate(145deg);
         }
+
         75% {
             -webkit-transform: rotate(130deg);
             transform: rotate(130deg);
         }
+
         100% {
             -webkit-transform: rotate(135deg);
             transform: rotate(135deg);
         }
     }
+
     @-webkit-keyframes topbar-x {
         0% {
             top: 0px;
             -webkit-transform: rotate(0deg);
         }
+
         45% {
             top: 6px;
             -webkit-transform: rotate(145deg);
         }
+
         75% {
             -webkit-transform: rotate(130deg);
         }
+
         100% {
             -webkit-transform: rotate(135deg);
         }
     }
+
     @keyframes topbar-back {
         0% {
             top: 6px;
             -webkit-transform: rotate(135deg);
             transform: rotate(135deg);
         }
+
         45% {
             -webkit-transform: rotate(-10deg);
             transform: rotate(-10deg);
         }
+
         75% {
             -webkit-transform: rotate(5deg);
             transform: rotate(5deg);
         }
+
         100% {
             top: 0px;
             -webkit-transform: rotate(0);
             transform: rotate(0);
         }
     }
+
     @-webkit-keyframes topbar-back {
         0% {
             top: 6px;
             -webkit-transform: rotate(135deg);
         }
+
         45% {
             -webkit-transform: rotate(-10deg);
         }
+
         75% {
             -webkit-transform: rotate(5deg);
         }
+
         100% {
             top: 0px;
             -webkit-transform: rotate(0);
         }
     }
+
     @keyframes bottombar-x {
         0% {
             bottom: 0px;
             -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
         }
+
         45% {
             bottom: 6px;
             -webkit-transform: rotate(-145deg);
             transform: rotate(-145deg);
         }
+
         75% {
             -webkit-transform: rotate(-130deg);
             transform: rotate(-130deg);
         }
+
         100% {
             -webkit-transform: rotate(-135deg);
             transform: rotate(-135deg);
         }
     }
+
     @-webkit-keyframes bottombar-x {
         0% {
             bottom: 0px;
             -webkit-transform: rotate(0deg);
         }
+
         45% {
             bottom: 6px;
             -webkit-transform: rotate(-145deg);
         }
+
         75% {
             -webkit-transform: rotate(-130deg);
         }
+
         100% {
             -webkit-transform: rotate(-135deg);
         }
     }
+
     @keyframes bottombar-back {
         0% {
             bottom: 6px;
             -webkit-transform: rotate(-135deg);
             transform: rotate(-135deg);
         }
+
         45% {
             -webkit-transform: rotate(10deg);
             transform: rotate(10deg);
         }
+
         75% {
             -webkit-transform: rotate(-5deg);
             transform: rotate(-5deg);
         }
+
         100% {
             bottom: 0px;
             -webkit-transform: rotate(0);
             transform: rotate(0);
         }
     }
+
     @-webkit-keyframes bottombar-back {
         0% {
             bottom: 6px;
             -webkit-transform: rotate(-135deg);
         }
+
         45% {
             -webkit-transform: rotate(10deg);
         }
+
         75% {
             -webkit-transform: rotate(-5deg);
         }
+
         100% {
             bottom: 0px;
             -webkit-transform: rotate(0);
         }
     }
+
     @-webkit-keyframes fadeIn {
         0% {
             opacity: 0;
         }
+
         100% {
             opacity: 1;
         }
     }
+
     @keyframes fadeIn {
         0% {
             opacity: 0;
         }
+
         100% {
             opacity: 1;
         }
     }
+
     .navbar-toggler-bar {
         display: block;
         position: relative;
@@ -5487,75 +5646,94 @@ Created using IcoMoon - icomoon.io
         border-radius: 1px;
         background: #FFFFFF;
     }
+
     .navbar-toggler-bar+.navbar-toggler-bar {
         margin-top: 7px;
     }
+
     .navbar-toggler-bar+.navbar-toggler-bar.navbar-kebab {
         margin-top: 3px !important;
     }
+
     .navbar-toggler-bar.bar2 {
         width: 17px;
         transition: width .2s linear;
     }
+
     .main-panel {
         width: 100%;
     }
+
     .navbar-toggle .navbar-toggler,
     .navbar-toggle {
         display: block !important;
     }
+
     .navbar .toggled .navbar-toggler-bar {
         width: 24px;
     }
+
     .navbar .toggled .navbar-toggler-bar+.navbar-toggler-bar {
         margin-top: 5px;
     }
+
     .nav-open .main-panel {
         right: 0;
         -webkit-transform: translate3d(260px, 0, 0);
         transform: translate3d(260px, 0, 0);
     }
+
     .nav-open .sidebar {
         -webkit-transform: translate3d(0px, 0, 0);
         transform: translate3d(0px, 0, 0);
         box-shadow: 0px 2px 22px 0 rgba(0, 0, 0, 0.2), 0px 2px 30px 0 rgba(0, 0, 0, 0.35);
     }
+
     .nav-open body {
         position: relative;
         overflow-x: hidden;
     }
+
     .nav-open .menu-on-right .main-panel {
         -webkit-transform: translate3d(-260px, 0, 0);
         transform: translate3d(-260px, 0, 0);
     }
+
     .nav-open .menu-on-right .navbar-collapse,
     .nav-open .menu-on-right .sidebar {
         -webkit-transform: translate3d(0px, 0, 0);
         transform: translate3d(0px, 0, 0);
     }
+
     .nav-open .menu-on-right .navbar-translate {
         -webkit-transform: translate3d(-300px, 0, 0);
         transform: translate3d(-300px, 0, 0);
     }
+
     .nav-open .menu-on-right #bodyClick {
         right: 260px;
         left: auto;
     }
+
     .menu-on-right .sidebar {
         left: auto;
         right: 0;
         -webkit-transform: translate3d(260px, 0, 0);
         transform: translate3d(260px, 0, 0);
     }
+
     .navbar-minimize {
         display: none;
     }
+
     .sidebar {
         box-shadow: none;
     }
+
     .nav-open .sidebar {
         box-shadow: 0px 2px 22px 0 rgba(0, 0, 0, 0.2), 0px 2px 30px 0 rgba(0, 0, 0, 0.35);
     }
+
     .sidebar,
     .main-panel,
     .sidebar-wrapper {
@@ -5795,8 +5973,8 @@ Created using IcoMoon - icomoon.io
 
 .login-page .card-login.card-plain .form-group.no-border .form-control,
 .login-page .card-login.card-plain .input-group.no-border .form-control {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #FFFFFF;
+    background-color: #F6B800;
+    color: #1E1E1E;
 }
 
 .login-page .card-login.card-plain .form-group.no-border .form-control:focus,
@@ -5805,7 +5983,7 @@ Created using IcoMoon - icomoon.io
 .login-page .card-login.card-plain .input-group.no-border .form-control:focus,
 .login-page .card-login.card-plain .input-group.no-border .form-control:active,
 .login-page .card-login.card-plain .input-group.no-border .form-control:active {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #F6B800;
     color: #FFFFFF;
 }
 
@@ -5813,7 +5991,7 @@ Created using IcoMoon - icomoon.io
 .login-page .card-login.card-plain .form-group.no-border .form-control+.input-group-append .input-group-text,
 .login-page .card-login.card-plain .input-group.no-border .form-control+.input-group-prepend .input-group-text,
 .login-page .card-login.card-plain .input-group.no-border .form-control+.input-group-append .input-group-text {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #F6B800;
 }
 
 .login-page .card-login.card-plain .form-group.no-border .form-control+.input-group-prepend .input-group-text:focus,
