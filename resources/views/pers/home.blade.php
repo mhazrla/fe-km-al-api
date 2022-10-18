@@ -19,7 +19,7 @@
                     <div class="card" style="height: 8rem;">
                         <div class="card-body text-center">
                             <h6 class="mb-3 text-muted">{{ $title['title_name'] }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">0</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ $perwiraTinggi }}</h6>
                         </div>
                     </div>
                 </div>
