@@ -14,18 +14,54 @@
 
     <div class="container">
         <div class="row">
-            @forelse ($titles as $title)
                 <div class="mb-2 col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
                     <div class="card" style="height: 8rem;">
                         <div class="card-body text-center">
-                            <h6 class="mb-3 text-muted">{{ $title['title_name'] }}</h6>
+                            <h6 class="mb-3 text-muted">{{ __('Perwira Tinggi') }}</h6>
                             <h6 class="card-subtitle mb-2 text-muted">{{ $perwiraTinggi }}</h6>
                         </div>
                     </div>
                 </div>
-            @empty
-                no datas
-            @endforelse
+                <div class="mb-2 col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                    <div class="card" style="height: 8rem;">
+                        <div class="card-body text-center">
+                            <h6 class="mb-3 text-muted">{{ __('Perwira Menengah') }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ $perwiraMenengah }}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2 col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                    <div class="card" style="height: 8rem;">
+                        <div class="card-body text-center">
+                            <h6 class="mb-3 text-muted">{{ __('Perwira Pertama') }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ $perwiraPertama}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2 col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                    <div class="card" style="height: 8rem;">
+                        <div class="card-body text-center">
+                            <h6 class="mb-3 text-muted">{{ __('Bintara Tinggi') }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ $bintaraTinggi}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2 col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                    <div class="card" style="height: 8rem;">
+                        <div class="card-body text-center">
+                            <h6 class="mb-3 text-muted">{{ __('Bintara') }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ $bintara}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2 col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                    <div class="card" style="height: 8rem;">
+                        <div class="card-body text-center">
+                            <h6 class="mb-3 text-muted">{{ __('Tamtama') }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ $tamtama}}</h6>
+                        </div>
+                    </div>
+                </div>
         </div>
 
         <div class="col-md-12">

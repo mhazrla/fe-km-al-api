@@ -35,10 +35,24 @@ class HomeController extends Controller
         if ($response->successful()) {
             $pers = json_decode($response, true);
             $perwiraTinggi = $pers['perwiraTinggi'];
+            $perwiraMenengah = $pers['perwiraMenengah'];
+            $perwiraPertama = $pers['perwiraPertama'];
+            $bintaraTinggi = $pers['bintaraTinggi'];
+            $bintara = $pers['bintara'];
+            $tamtama = $pers['tamtama'];
             $pers = $pers['pers'];
         }
 
-        return view('pers.home', ['pers' => $pers, 'titles' => $title, 'perwiraTinggi' => $perwiraTinggi]);
+        return view('pers.home', [
+            'pers' => $pers,
+            'titles' => $title,
+            'perwiraTinggi' => $perwiraTinggi,
+            'perwiraMenengah' => $perwiraMenengah,
+            'perwiraPertama' => $perwiraPertama,
+            'bintaraTinggi' => $bintaraTinggi,
+            'bintara' => $bintara,
+            'tamtama' => $tamtama,
+        ]);
     }
 
     public function create()
