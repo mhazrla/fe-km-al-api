@@ -74,7 +74,6 @@
                 <div class="card-body">
                     <form id="live-search" action="" class="styled" method="post">
                         <fieldset>
-                            <h1>Live Search</h1>
                             <input type="text" class="text-input" id="filter" placeholder="search" />
                             <span id="filter-count"></span>
                         </fieldset>
