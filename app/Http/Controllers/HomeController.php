@@ -23,13 +23,6 @@ class HomeController extends Controller
     public function index()
     {
 
-        $title = null;
-        $titles =  Http::get('http://km-al-api.test/api/title');
-        if ($titles->successful()) {
-            $title = json_decode($titles, true);
-            $title = $title['data'];
-        }
-
         $pers = null;
         $response =  Http::get('http://km-al-api.test/api/pers');
         if ($response->successful()) {
@@ -45,7 +38,6 @@ class HomeController extends Controller
 
         return view('pers.home', [
             'pers' => $pers,
-            'titles' => $title,
             'perwiraTinggi' => $perwiraTinggi,
             'perwiraMenengah' => $perwiraMenengah,
             'perwiraPertama' => $perwiraPertama,
@@ -153,7 +145,6 @@ class HomeController extends Controller
     public function destroy($id)
     {
         $response = Http::delete('http://km-al-api.test/api/pers/' . $id);
-        // return $response->json();
-        return to_route('home')->with('status', 'New data has been deleted.');
+        return response()->json(['status' => 'Data berhasil dihapus']);
     }
 }

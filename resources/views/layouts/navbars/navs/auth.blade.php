@@ -2,8 +2,9 @@
 <nav class="navbar navbar-expand-lg bg-primary  navbar-absolute">
     <div class="container-fluid">
         <div class="navbar-wrapper ">
-            <a class="navbar-brand" href="/"><img src="{{ asset('assets/img/logo-tni.png') }}" alt="" height="35rem"></a>
-            <a class="navbar-brand" href="/">TNI AL</a>
+            <a class="navbar-brand" href="/"><img src="{{ asset('assets/img/logo-tni.png') }}" alt=""
+                    height="35rem"></a>
+            <a class="navbar-brand" href="/">Tentara Indonesia</a>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
