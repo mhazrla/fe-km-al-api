@@ -37,7 +37,7 @@
                                 <h5 class="title">{{ $data['nama'] }}</h5>
                             </a>
                             <p class="description">
-                                {{ $data['title']['title_name'] }}
+                                NRP : {{ $data['nrp'] }}
                             </p>
                         </div>
                     </div>
@@ -51,26 +51,24 @@
                             @csrf
                             @method('put')
                             @include('alerts.success')
-                            <div class="d-flex justify-content-center">
-                                <div class="row">
-                                    <div class="form-group text-center px">
-                                        <label>{{ __('NRP') }}</label>
-                                        <input type="text" name="name" class="form-control"
-                                            value="{{ $data['nrp'] }}" readonly>
-
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="col-md-6 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Address') }}</label>
+                                        <label>{{ __('Organization') }}</label>
                                         <input type="text" name="name" class="form-control"
-                                            value="{{ $data['alamat'] }}" readonly>
+                                            value="{{ $data['organization']['organization_name'] }}" readonly>
 
                                     </div>
                                 </div>
                                 <div class="col-md-6 pr-1">
+                                    <div class="form-group">
+                                        <label>{{ __('Title') }}</label>
+                                        <input type="text" name="name" class="form-control"
+                                            value="{{ $data['title']['title_name'] }}" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Status') }}</label>
                                         <input type="text" name="name" class="form-control"
@@ -78,7 +76,7 @@
 
                                     </div>
                                 </div>
-                                <div class="col-md-6 pr-1">
+                                <div class="col-md-4 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Place of Birth') }}</label>
                                         <input type="text" name="name" class="form-control"
@@ -86,11 +84,18 @@
 
                                     </div>
                                 </div>
-                                <div class="col-md-6 pr-1">
+                                <div class="col-md-4 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Time of Birth') }}</label>
                                         <input type="text" name="name" class="form-control"
                                             value="{{ $data['tgl_lahir'] }}" readonly>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pr-1">
+                                    <div class="form-group">
+                                        <label>{{ __('Address') }}</label>
+                                        <textarea name="" id="" class="form-control" cols="30" rows="10" readonly>{{ $data['alamat'] }}</textarea>
 
                                     </div>
                                 </div>

@@ -23,13 +23,6 @@ class HomeController extends Controller
     public function index()
     {
 
-        $title = null;
-        $titles =  Http::get('http://km-al-api.test/api/title');
-        if ($titles->successful()) {
-            $title = json_decode($titles, true);
-            $title = $title['data'];
-        }
-
         $pers = null;
         $response =  Http::get('http://km-al-api.test/api/pers');
         if ($response->successful()) {
@@ -39,24 +32,32 @@ class HomeController extends Controller
             $perwiraPertama = $pers['perwiraPertama'];
             $bintaraTinggi = $pers['bintaraTinggi'];
             $bintara = $pers['bintara'];
+            $tamtamaKepala = $pers['tamtamaKepala'];
             $tamtama = $pers['tamtama'];
             $pers = $pers['pers'];
         }
 
         return view('pers.home', [
             'pers' => $pers,
-            'titles' => $title,
             'perwiraTinggi' => $perwiraTinggi,
             'perwiraMenengah' => $perwiraMenengah,
             'perwiraPertama' => $perwiraPertama,
             'bintaraTinggi' => $bintaraTinggi,
             'bintara' => $bintara,
             'tamtama' => $tamtama,
+            'tamtamaKepala' => $tamtamaKepala,
         ]);
     }
 
     public function create()
     {
+        $organization = null;
+        $organizations =  Http::get('http://km-al-api.test/api/organization');
+        if ($organizations->successful()) {
+            $organization = json_decode($organizations, true);
+            $organization = $organization['data'];
+        }
+
         $title = null;
         $titles =  Http::get('http://km-al-api.test/api/title');
         if ($titles->successful()) {
@@ -71,7 +72,7 @@ class HomeController extends Controller
             $status = $status['data'];
         }
 
-        return view('pers.create', ['titles' => $title, 'statuses' => $status]);
+        return view('pers.create', ['titles' => $title, 'statuses' => $status, 'organizations' => $organization]);
     }
 
     public function store(StorePerRequest $request)
@@ -107,6 +108,13 @@ class HomeController extends Controller
 
     public function edit($id)
     {
+        $organization = null;
+        $organizations =  Http::get('http://km-al-api.test/api/organization');
+        if ($organizations->successful()) {
+            $organization = json_decode($organizations, true);
+            $organization = $organization['data'];
+        }
+
         $title = null;
         $titles =  Http::get('http://km-al-api.test/api/title');
         if ($titles->successful()) {
@@ -126,7 +134,7 @@ class HomeController extends Controller
             if ($response->successful()) {
                 $per = json_decode($response, true);
                 $per = $per['per'];
-                return view('pers.edit', ['data' => $per, 'titles' => $title, 'statuses' => $status]);
+                return view('pers.edit', ['data' => $per, 'titles' => $title, 'statuses' => $status, 'organizations' => $organization]);
             } else {
                 return abort(404);
             }
@@ -153,7 +161,6 @@ class HomeController extends Controller
     public function destroy($id)
     {
         $response = Http::delete('http://km-al-api.test/api/pers/' . $id);
-        // return $response->json();
-        return to_route('home')->with('status', 'New data has been deleted.');
+        return response()->json(['status' => 'Data berhasil dihapus']);
     }
 }
