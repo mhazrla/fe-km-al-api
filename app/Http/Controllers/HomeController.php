@@ -32,6 +32,7 @@ class HomeController extends Controller
             $perwiraPertama = $pers['perwiraPertama'];
             $bintaraTinggi = $pers['bintaraTinggi'];
             $bintara = $pers['bintara'];
+            $tamtamaKepala = $pers['tamtamaKepala'];
             $tamtama = $pers['tamtama'];
             $pers = $pers['pers'];
         }
@@ -43,6 +44,7 @@ class HomeController extends Controller
             'perwiraPertama' => $perwiraPertama,
             'bintaraTinggi' => $bintaraTinggi,
             'bintara' => $bintara,
+            'tamtamaKepala' => $tamtamaKepala,
             'tamtama' => $tamtama,
         ]);
     }

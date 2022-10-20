@@ -13,7 +13,7 @@
 
         <div class="col">
             <div class="row ">
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-3 col-sm-4">
                     <div class="card" style="height: 8rem;">
                         <div class="card-body text-center">
                             <h6 class="mb-3 text-muted">{{ __('Perwira Tinggi') }}</h6>
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-3 col-sm-4">
                     <div class="card" style="height: 8rem;">
                         <div class="card-body text-center">
                             <h6 class="mb-3 text-muted">{{ __('Perwira Menengah') }}</h6>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-3 col-sm-4">
                     <div class="card" style="height: 8rem;">
                         <div class="card-body text-center">
                             <h6 class="mb-3 text-muted">{{ __('Perwira Pertama') }}</h6>
@@ -37,9 +37,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-3 col-sm-4">
                     <div class="card" style="height: 8rem;">
                         <div class="card-body text-center">
                             <h6 class="mb-3 text-muted">{{ __('Bintara Tinggi') }}</h6>
@@ -47,7 +45,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4">
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-3 col-sm-4">
                     <div class="card" style="height: 8rem;">
                         <div class="card-body text-center">
                             <h6 class="mb-3 text-muted">{{ __('Bintara') }}</h6>
@@ -55,7 +55,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-3 col-sm-4">
+                    <div class="card" style="height: 8rem;">
+                        <div class="card-body text-center">
+                            <h6 class="mb-3 text-muted">{{ __('Tamtama Kepala') }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ $tamtamaKepala }}</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4">
                     <div class="card" style="height: 8rem;">
                         <div class="card-body text-center">
                             <h6 class="mb-3 text-muted">{{ __('Tamtama') }}</h6>
