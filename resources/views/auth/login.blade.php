@@ -38,7 +38,7 @@
                                 <div class="logo-container">
                                     <img src="{{ asset('assets/img/logo-tni.png') }}" alt="">
                                 </div>
-                                <h4 class="text-login">TNI - ANGKATAN LAUT</h4>
+                                <h4 class="text-login">TENTARA NASIONAL INDONESIA</h4>
                             </div>
 
                             <div class="card-body ">
@@ -78,7 +78,7 @@
                             </div>
 
                             {{-- <div class="card-footer ">
-                                
+
                                 <div class="pull-left">
                                     <h6>
                                         <a href="{{ route('register') }}"
