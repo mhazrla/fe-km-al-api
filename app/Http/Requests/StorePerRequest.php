@@ -31,6 +31,7 @@ class StorePerRequest extends FormRequest
             'alamat' => ['required'],
             'title_id' => ['required'],
             'status_id' => ['required'],
+            'organization_id' => ['required'],
             'foto' => ['nullable', 'image'],
         ];
     }
