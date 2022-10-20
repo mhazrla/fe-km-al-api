@@ -50,17 +50,17 @@
                             <div class="row">
                                 <div class="col-md-6 ">
                                     <div class="form-group ">
-                                        <label>{{ __(' Status') }}</label>
-                                        <select class="form-control" name="status_id">
-                                            <option disabled>Select Status</option>
-                                            @foreach ($statuses as $status)
-                                                <option value="{{ $status['status_id'] }}"
-                                                    @if ($status['status_id'] == $data['status']['status_id']) selected @endif>
-                                                    {{ $status['status_name'] }}</option>
+                                        <label>{{ __(' Organization') }}</label>
+                                        <select class="form-control" name="organization_id">
+                                            <option disabled>Select Organization</option>
+                                            @foreach ($organizations as $organization)
+                                                <option value="{{ $organization['organization_id'] }}"
+                                                    @if ($organization['organization_id'] == $data['organization']['organization_id']) selected @endif>
+                                                    {{ $organization['organization_name'] }}</option>
                                             @endforeach
                                         </select>
 
-                                        @include('alerts.feedback', ['field' => 'status_id'])
+                                        @include('alerts.feedback', ['field' => 'organization_id'])
                                     </div>
                                 </div>
                                 <div class="col-md-6 ">
@@ -81,7 +81,22 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6 ">
+                                <div class="col-md-4 ">
+                                    <div class="form-group ">
+                                        <label>{{ __(' Status') }}</label>
+                                        <select class="form-control" name="status_id">
+                                            <option disabled>Select Status</option>
+                                            @foreach ($statuses as $status)
+                                                <option value="{{ $status['status_id'] }}"
+                                                    @if ($status['status_id'] == $data['status']['status_id']) selected @endif>
+                                                    {{ $status['status_name'] }}</option>
+                                            @endforeach
+                                        </select>
+
+                                        @include('alerts.feedback', ['field' => 'status_id'])
+                                    </div>
+                                </div>
+                                <div class="col-md-4 ">
                                     <div class="form-group ">
                                         <label>{{ __(' Place of Birth') }}</label>
                                         <input type="text" name="tmp_lahir" class="form-control"
@@ -89,7 +104,7 @@
                                         @include('alerts.feedback', ['field' => 'tmp_lahir'])
                                     </div>
                                 </div>
-                                <div class="col-md-6 ">
+                                <div class="col-md-4 ">
                                     <div class="form-group ">
                                         <label>{{ __(' Date of Birth') }}</label>
                                         <input type="date" name="tgl_lahir" class="form-control"

@@ -54,18 +54,17 @@
                             <div class="row">
                                 <div class="col-md-6 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Title') }}</label>
+                                        <label>{{ __('Organization') }}</label>
                                         <input type="text" name="name" class="form-control"
-                                            value="{{ $data['title']['title_name'] }}" readonly>
+                                            value="{{ $data['organization']['organization_name'] }}" readonly>
 
                                     </div>
                                 </div>
                                 <div class="col-md-6 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Army') }}</label>
+                                        <label>{{ __('Title') }}</label>
                                         <input type="text" name="name" class="form-control"
                                             value="{{ $data['title']['title_name'] }}" readonly>
-
                                     </div>
                                 </div>
 

@@ -94,6 +94,7 @@
                                     <th class="text-center"></th>
                                     <th>NRP</th>
                                     <th>Nama</th>
+                                    <th>Organization</th>
                                     <th>Title</th>
                                     <th class="text-center">Actions</th>
                                 </tr>
@@ -109,6 +110,7 @@
                                         </td>
                                         <td>{{ $per['nrp'] }}</td>
                                         <td>{{ $per['nama'] }}</td>
+                                        <td>{{ $per['organization']['organization_name'] }}</td>
                                         <td>{{ $per['title']['title_name'] }}</td>
                                         <td class="td-actions text-center d-flex justify-content-around">
                                             <a href="{{ route('show', $per['per_id']) }}"><button type="button"

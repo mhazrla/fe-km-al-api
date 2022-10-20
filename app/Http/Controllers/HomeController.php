@@ -44,13 +44,20 @@ class HomeController extends Controller
             'perwiraPertama' => $perwiraPertama,
             'bintaraTinggi' => $bintaraTinggi,
             'bintara' => $bintara,
-            'tamtamaKepala' => $tamtamaKepala,
             'tamtama' => $tamtama,
+            'tamtamaKepala' => $tamtamaKepala,
         ]);
     }
 
     public function create()
     {
+        $organization = null;
+        $organizations =  Http::get('http://km-al-api.test/api/organization');
+        if ($organizations->successful()) {
+            $organization = json_decode($organizations, true);
+            $organization = $organization['data'];
+        }
+
         $title = null;
         $titles =  Http::get('http://km-al-api.test/api/title');
         if ($titles->successful()) {
@@ -65,7 +72,7 @@ class HomeController extends Controller
             $status = $status['data'];
         }
 
-        return view('pers.create', ['titles' => $title, 'statuses' => $status]);
+        return view('pers.create', ['titles' => $title, 'statuses' => $status, 'organizations' => $organization]);
     }
 
     public function store(StorePerRequest $request)
@@ -101,6 +108,13 @@ class HomeController extends Controller
 
     public function edit($id)
     {
+        $organization = null;
+        $organizations =  Http::get('http://km-al-api.test/api/organization');
+        if ($organizations->successful()) {
+            $organization = json_decode($organizations, true);
+            $organization = $organization['data'];
+        }
+
         $title = null;
         $titles =  Http::get('http://km-al-api.test/api/title');
         if ($titles->successful()) {
@@ -120,7 +134,7 @@ class HomeController extends Controller
             if ($response->successful()) {
                 $per = json_decode($response, true);
                 $per = $per['per'];
-                return view('pers.edit', ['data' => $per, 'titles' => $title, 'statuses' => $status]);
+                return view('pers.edit', ['data' => $per, 'titles' => $title, 'statuses' => $status, 'organizations' => $organization]);
             } else {
                 return abort(404);
             }
