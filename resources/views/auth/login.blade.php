@@ -2,7 +2,7 @@
     'namePage' => 'Login page',
     'class' => 'login-page sidebar-mini ',
     'activePage' => 'login',
-    'backgroundImage' => asset('assets') . '/img/wallpaper-air.jpg',
+    'backgroundImage' => asset('assets') . '/img/tnilogin.jpg',
 ])
 
 @section('content')
