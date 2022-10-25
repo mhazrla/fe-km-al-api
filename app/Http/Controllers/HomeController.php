@@ -40,13 +40,7 @@ class HomeController extends Controller
             'angkatanDarat' => $angkatanDarat,
             'angkatanUdara' => $angkatanUdara,
             'angkatanLaut' => $angkatanLaut,
-            // 'perwiraTinggi' => $perwiraTinggi,
-            // 'perwiraMenengah' => $perwiraMenengah,
-            // 'perwiraPertama' => $perwiraPertama,
-            // 'bintaraTinggi' => $bintaraTinggi,
-            // 'bintara' => $bintara,
-            // 'tamtama' => $tamtama,
-            // 'tamtamaKepala' => $tamtamaKepala,
+
         ]);
     }
 

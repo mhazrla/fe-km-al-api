@@ -1,6 +1,5 @@
 <footer class="footer">
     <div class=" container-fluid ">
-        
         <div class="text-center" id="copyright">
             &copy;
             <script>
@@ -8,7 +7,7 @@
             </script>,
             <?php echo e(__(' Inditech - Team 2')); ?>
 
-            
+
         </div>
     </div>
 </footer>

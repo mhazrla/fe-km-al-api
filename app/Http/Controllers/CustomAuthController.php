@@ -33,8 +33,10 @@ class CustomAuthController extends Controller
 
     public function logout()
     {
+        Http::withHeaders([
+            'Authorization' => 'Bearer ' . session('token')
+        ])->post('http://km-al-api.test/api/logout');
         Session::flush();
-
         return redirect('login');
     }
 }
