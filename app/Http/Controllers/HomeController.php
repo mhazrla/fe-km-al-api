@@ -27,25 +27,31 @@ class HomeController extends Controller
         $response =  Http::get('http://km-al-api.test/api/pers');
         if ($response->successful()) {
             $pers = json_decode($response, true);
-            $perwiraTinggi = $pers['perwiraTinggi'];
-            $perwiraMenengah = $pers['perwiraMenengah'];
-            $perwiraPertama = $pers['perwiraPertama'];
-            $bintaraTinggi = $pers['bintaraTinggi'];
-            $bintara = $pers['bintara'];
-            $tamtamaKepala = $pers['tamtamaKepala'];
-            $tamtama = $pers['tamtama'];
+            $angkatanDarat = $pers['angkatanDarat'];
+            $angkatanUdara = $pers['angkatanUdara'];
+            $angkatanLaut = $pers['angkatanLaut'];
+            // $perwiraTinggi = $pers['perwiraTinggi'];
+            // $perwiraMenengah = $pers['perwiraMenengah'];
+            // $perwiraPertama = $pers['perwiraPertama'];
+            // $bintaraTinggi = $pers['bintaraTinggi'];
+            // $bintara = $pers['bintara'];
+            // $tamtamaKepala = $pers['tamtamaKepala'];
+            // $tamtama = $pers['tamtama'];
             $pers = $pers['pers'];
         }
 
         return view('pers.home', [
             'pers' => $pers,
-            'perwiraTinggi' => $perwiraTinggi,
-            'perwiraMenengah' => $perwiraMenengah,
-            'perwiraPertama' => $perwiraPertama,
-            'bintaraTinggi' => $bintaraTinggi,
-            'bintara' => $bintara,
-            'tamtama' => $tamtama,
-            'tamtamaKepala' => $tamtamaKepala,
+            'angkatanDarat' => $angkatanDarat,
+            'angkatanUdara' => $angkatanUdara,
+            'angkatanLaut' => $angkatanLaut,
+            // 'perwiraTinggi' => $perwiraTinggi,
+            // 'perwiraMenengah' => $perwiraMenengah,
+            // 'perwiraPertama' => $perwiraPertama,
+            // 'bintaraTinggi' => $bintaraTinggi,
+            // 'bintara' => $bintara,
+            // 'tamtama' => $tamtama,
+            // 'tamtamaKepala' => $tamtamaKepala,
         ]);
     }
 

@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg bg-primary  navbar-absolute">
     <div class="container-fluid">
         <div class="navbar-wrapper ">
-            <a class="navbar-brand" href="/"><img src="{{ asset('assets/img/logo-tni.png') }}" alt=""
+            <a class="navbar-brand" href="/"><img src="{{ asset('assets/img/tni-logo.png') }}" alt=""
                     height="35rem"></a>
             <a class="navbar-brand" href="/">Tentara Indonesia</a>
         </div>
