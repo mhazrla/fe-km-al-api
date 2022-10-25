@@ -17,6 +17,11 @@
                                 <div class="col-lg-12 col-md-9">
                                     <p class="text-lead text-light mt-3 mb-0">
                                         @include('alerts.migrations_check')
+                                        @if (\Session::has('message'))
+                                            <div class="alert alert-danger">
+                                                {{ \Session::get('message') }}
+                                            </div>
+                                        @endif
                                     </p>
                                 </div>
                                 <div class="col-lg-5 col-md-6">

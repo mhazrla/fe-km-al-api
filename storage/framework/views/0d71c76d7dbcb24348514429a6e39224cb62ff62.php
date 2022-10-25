@@ -1,10 +1,8 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="panel-header panel-header-sm container-fluid">
         <div class="container">
             <div class="row">
-                <h5 class="title align-text-center">{{ __('Dashboard') }}</h5>
+                <h5 class="title align-text-center"><?php echo e(__('Dashboard')); ?></h5>
 
             </div>
         </div>
@@ -16,36 +14,36 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="card" style="height: 12rem;">
                         <div class="card-header text-center ">
-                            <img src="{{ asset('assets/img/logo-tni-ad.png') }}" alt="" width="30%"
+                            <img src="<?php echo e(asset('assets/img/logo-tni-ad.png')); ?>" alt="" width="30%"
                                 height="70px">
                         </div>
                         <div class="card-body text-center">
-                            <h6 class="mb-3 text-muted">{{ __('TNI - ANGKATAN DARAT') }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ $angkatanDarat }}</h6>
+                            <h6 class="mb-3 text-muted"><?php echo e(__('TNI - ANGKATAN DARAT')); ?></h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><?php echo e($angkatanDarat); ?></h6>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="card" style="height: 12rem;">
                         <div class="card-header text-center ">
-                            <img src="{{ asset('assets/img/logo-tni-au.png') }}" alt="" width="30%"
+                            <img src="<?php echo e(asset('assets/img/logo-tni-au.png')); ?>" alt="" width="30%"
                                 height="70px">
                         </div>
                         <div class="card-body text-center">
-                            <h6 class="mb-3 text-muted">{{ __('TNI - ANGKATAN UDARA') }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ $angkatanUdara }}</h6>
+                            <h6 class="mb-3 text-muted"><?php echo e(__('TNI - ANGKATAN UDARA')); ?></h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><?php echo e($angkatanUdara); ?></h6>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="card" style="height: 12rem;">
                         <div class="card-header text-center ">
-                            <img src="{{ asset('assets/img/logo-tni-al.png') }}" alt="" width="30%"
+                            <img src="<?php echo e(asset('assets/img/logo-tni-al.png')); ?>" alt="" width="30%"
                                 height="70px">
                         </div>
                         <div class="card-body text-center">
-                            <h6 class="mb-3 text-muted">{{ __('TNI - ANGKATAN LAUT') }}</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ $angkatanLaut }}</h6>
+                            <h6 class="mb-3 text-muted"><?php echo e(__('TNI - ANGKATAN LAUT')); ?></h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><?php echo e($angkatanLaut); ?></h6>
                         </div>
                     </div>
                 </div>
@@ -79,31 +77,31 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($pers as $per)
+                                <?php $__empty_1 = true; $__currentLoopData = $pers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $per): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                     <tr>
-                                        <input type="hidden" class="delete_id" value="{{ $per['per_id'] }}">
+                                        <input type="hidden" class="delete_id" value="<?php echo e($per['per_id']); ?>">
 
                                         <td class="text-center">
                                             <img class="avatar border-gray"
-                                                src="{{ $per['foto'] ? $per['foto'] : 'asset(\'assets/img/default-avatar.png\')' }}">
+                                                src="<?php echo e($per['foto'] ? $per['foto'] : 'asset(\'assets/img/default-avatar.png\')'); ?>">
                                         </td>
-                                        <td>{{ $per['nrp'] }}</td>
-                                        <td>{{ $per['nama'] }}</td>
-                                        <td>{{ $per['organization']['organization_name'] }}</td>
-                                        <td>{{ $per['title']['title_name'] }}</td>
+                                        <td><?php echo e($per['nrp']); ?></td>
+                                        <td><?php echo e($per['nama']); ?></td>
+                                        <td><?php echo e($per['organization']['organization_name']); ?></td>
+                                        <td><?php echo e($per['title']['title_name']); ?></td>
                                         <td class="td-actions text-center d-flex justify-content-around">
-                                            <a href="{{ route('show', $per['per_id']) }}"><button type="button"
+                                            <a href="<?php echo e(route('show', $per['per_id'])); ?>"><button type="button"
                                                     rel="tooltip" class="btn btn-info btn-sm">
                                                     <i class="now-ui-icons users_single-02"></i>
                                                 </button></a>
-                                            <a href="{{ route('edit', $per['per_id']) }}"><button type="button"
+                                            <a href="<?php echo e(route('edit', $per['per_id'])); ?>"><button type="button"
                                                     rel="tooltip" class="btn btn-success btn-sm">
                                                     <i class="now-ui-icons ui-2_settings-90"></i>
                                                 </button></a>
-                                            <form action="{{ route('destroy', $per['per_id']) }}" method="POST"
+                                            <form action="<?php echo e(route('destroy', $per['per_id'])); ?>" method="POST"
                                                 class="d-inline-block">
-                                                @csrf
-                                                @method('DELETE')
+                                                <?php echo csrf_field(); ?>
+                                                <?php echo method_field('DELETE'); ?>
                                                 <button class="btn btn-danger btn-sm btn-delete"><i
                                                         class="now-ui-icons ui-1_simple-remove"></i></button>
                                             </form>
@@ -112,13 +110,13 @@
 
                                     </tr>
 
-                                @empty
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                                     <tr>
                                         <td colspan="5" class="text-center">
                                             no data
                                         </td>
                                     </tr>
-                                @endforelse
+                                <?php endif; ?>
 
 
                             </tbody>
@@ -128,9 +126,9 @@
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@push('js')
+<?php $__env->startPush('js'); ?>
     <script>
         $(document).ready(function() {
 
@@ -205,4 +203,6 @@
             });
         });
     </script>
-@endpush
+<?php $__env->stopPush(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\fe-km-al-api\resources\views/pers/home.blade.php ENDPATH**/ ?>

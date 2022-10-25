@@ -1,9 +1,4 @@
-@extends('layouts.app', [
-    'namePage' => 'Add Personil',
-    'class' => 'login-page sidebar-mini ',
-    'activePage' => 'home',
-    'backgroundImage' => asset('now') . '/img/bg14.jpg',
-])
+@extends('layouts.app')
 
 @section('content')
     <div class="panel-header panel-header-sm container-fluid">
