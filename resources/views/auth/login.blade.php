@@ -34,9 +34,9 @@
                     <form role="form" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="card card-login card-plain">
-                            <div class="card-header ">
+                            <div class="card-header">
                                 <div class="logo-container">
-                                    <img src="{{ asset('assets/img/logo-tni.png') }}" alt="">
+                                    <img src="{{ asset('assets/img/tni-logo.png') }}" alt="">
                                 </div>
                                 <h4 class="text-login">TENTARA NASIONAL INDONESIA</h4>
                             </div>
